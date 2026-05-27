@@ -1,0 +1,139 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NexusDesk AI - Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {error: "#ba1a1a", "secondary-container": "#a0f399", primary: "#004e9f", "primary-container": "#0066cc", "tertiary-fixed": "#ffdcbe", "bg-app": "#F5F5F5", background: "#fbf9f8", "on-error": "#ffffff", "text-tertiary": "#999999", "surface-container-highest": "#e4e2e1", "surface-container": "#f0eded", "on-secondary": "#ffffff", "inverse-primary": "#aac7ff", "on-tertiary-fixed": "#2c1600", secondary: "#1b6d24", "error-red": "#E60012", "on-primary-fixed": "#001b3e", "on-secondary-fixed": "#002204", "secondary-fixed": "#a3f69c", "surface-variant": "#e4e2e1", "on-primary-fixed-variant": "#00458e", "surface-container-high": "#eae8e7", "primary-fixed-dim": "#aac7ff", "secondary-fixed-dim": "#88d982", "on-secondary-container": "#217128", "on-tertiary-container": "#ffe4cd", "inverse-on-surface": "#f3f0f0", "tertiary-fixed-dim": "#ffb870", "on-tertiary-fixed-variant": "#693c00", "on-primary-container": "#dfe8ff", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "tertiary-container": "#995900", "ai-gold": "#FFC107", "surface-container-lowest": "#ffffff", outline: "#727784", "outline-variant": "#c1c6d5", "surface-dim": "#dcd9d9", "primary-fixed": "#d7e3ff", "on-secondary-fixed-variant": "#005312", "ai-gold-subtle": "#FFF9C4", tertiary: "#774400", "border-default": "#E0E0E0", "inverse-surface": "#303030", "text-secondary": "#666666", surface: "#fbf9f8", "on-surface-variant": "#414753", "surface-white": "#FFFFFF", "on-background": "#1b1c1c", "surface-bright": "#fbf9f8", "on-primary": "#ffffff", "surface-container-low": "#f6f3f2", "on-error-container": "#93000a", "surface-tint": "#005cba", "on-surface": "#1b1c1c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"sidebar-width": "240px", xl: "24px", xxl: "32px", "layout-gutter": "16px", sm: "8px", md: "12px", "layout-margin": "24px", lg: "16px", xs: "4px", base: "8px"}, fontFamily: {"body-default": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "label-bold": ["Inter"], "title-card": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"body-default": ["14px", {lineHeight: "22px", fontWeight: "400"}], "body-sm": ["12px", {lineHeight: "18px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", letterSpacing: "-0.2px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.3px", fontWeight: "600"}], "label-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "title-card": ["18px", {lineHeight: "24px", fontWeight: "600"}]}}}};</script>
+    <style>
+            body {
+                background-color: #F5F5F5;
+                background-image: 
+                    radial-gradient(at 0% 0%, rgba(0, 78, 159, 0.03) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, rgba(0, 102, 204, 0.03) 0px, transparent 50%);
+            }
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            .glass-card {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(224, 224, 224, 0.5);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            input:focus {
+                box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+                outline: none;
+            }
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-4px); }
+                75% { transform: translateX(4px); }
+            }
+            .error-shake {
+                animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+                animation-iteration-count: 2;
+            }
+        </style>
+    </head>
+    <body class="flex items-center justify-center min-h-screen p-layout-margin font-body-default text-on-background">
+    <main class="w-full max-w-[400px] flex flex-col items-center">
+    <!-- Logo Area -->
+    <div class="mb-xxl flex flex-col items-center gap-sm">
+    <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-sm">
+    <span class="material-symbols-outlined text-surface-white text-3xl" data-icon="rocket_launch">rocket_launch</span>
+    </div>
+    <h1 class="font-headline-md text-headline-md font-bold text-primary">NexusDesk AI</h1>
+    </div>
+    <!-- Login Card -->
+    <section class="glass-card w-full p-xxl rounded-xl">
+    <div class="mb-lg">
+    <h2 class="font-headline-sm text-headline-sm text-on-surface">Welcome Back</h2>
+    <p class="text-text-secondary font-body-default mt-xs">Access your intelligent workspace</p>
+    </div>
+    <form class="space-y-lg" id="loginForm">
+    <!-- Email Input -->
+    <div class="space-y-xs">
+    <label class="font-label-bold text-label-bold text-on-surface-variant" for="email">Email Address</label>
+    <div class="relative group">
+    <div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none text-outline">
+    <span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+    </div>
+    <input class="block w-full pl-10 pr-md py-[10px] border-border-default rounded-lg text-body-default placeholder:text-text-tertiary focus:border-primary transition-all duration-200" id="email" name="email" placeholder="name@company.com" required="" type="email">
+    </div>
+    </div>
+    <!-- Password Input -->
+    <div class="space-y-xs">
+    <label class="font-label-bold text-label-bold text-on-surface-variant" for="password">Password</label>
+    <div class="relative group">
+    <div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none text-outline">
+    <span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+    </div>
+    <input class="block w-full pl-10 pr-10 py-[10px] border-border-default rounded-lg text-body-default placeholder:text-text-tertiary focus:border-primary transition-all duration-200" id="password" name="password" placeholder="????????" required="" type="password">
+    <button class="absolute inset-y-0 right-0 pr-md flex items-center text-outline hover:text-primary transition-colors" onclick="togglePassword()" type="button">
+    <span class="material-symbols-outlined text-[20px]" data-icon="visibility" id="eyeIcon">visibility</span>
+    </button>
+    </div>
+    </div>
+    <!-- Remember & Forgot -->
+    <div class="flex items-center justify-between">
+    <label class="flex items-center gap-xs cursor-pointer group">
+    <input class="w-4 h-4 rounded border-border-default text-primary focus:ring-primary/20" type="checkbox">
+    <span class="font-body-sm text-body-sm text-text-secondary group-hover:text-on-surface transition-colors">Remember me</span>
+    </label>
+    <a class="font-label-bold text-label-bold text-primary hover:underline transition-all" href="login.html">Forgot password?</a>
+    </div>
+    <!-- CTA Button -->
+    <button class="w-full bg-primary hover:bg-primary-container text-surface-white font-label-bold text-body-default py-md rounded-lg shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200" type="submit">
+                        Sign In
+                    </button>
+    </form>
+    <!-- AI Insight Hint (Subtle SaaS visual) -->
+    <div class="mt-xl p-md bg-ai-gold-subtle rounded-lg border-l-2 border-ai-gold flex gap-md items-start">
+    <span class="material-symbols-outlined text-ai-gold text-[18px]" data-icon="bolt">bolt</span>
+    <p class="text-xs text-[#693c00] leading-relaxed">
+                        Nexus AI detected a login attempt from a new device? <a class="font-bold underline" href="analytics.html">Review security logs</a>
+    </p>
+    </div>
+    </section>
+    <!-- Footer -->
+    <footer class="mt-xxl text-center">
+    <p class="text-text-tertiary font-body-sm">
+                    Problems signing in? <a class="text-text-secondary hover:text-primary font-medium transition-colors" href="roles.html">Contact administrator</a>
+    </p>
+    <div class="mt-xl flex items-center justify-center gap-xl grayscale opacity-50">
+    <img alt="Partner Logo 1" class="h-6" data-alt="A minimalist, professional corporate logo for a high-tech security firm, rendered in a crisp, vector style with neutral grey tones. The logo sits against a soft white background, embodying a modern 2026 SaaS aesthetic with clean lines and geometric precision. The overall mood is one of corporate trust and technical reliability in a high-performance software ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf7cDXda3CrKksQTSaC3glsaXWcAUIlt0_LunUJ5wfPLyan1zOuPy9hvmulUvDhi3GvHilzUk-BrsnErYgA-VDd5yKO4lePxl2gTItTjkrx77W4m3oy0e_d5vWqec-HrDbQEo8PlVU9b3YgP_ytswIcuAbjo75zIqypRd9NJ8PMT34FTjIdhNPUvflBTe5jsFoNAta_SADwsE_qyvbd02I78Zum6mjKYX5uoXkniI69MDiJe8HB0tNodR2YF-IogaK7N4ty49oFsQM">
+    <img alt="Partner Logo 2" class="h-6" data-alt="A sleek and technical secondary partner logo designed for a data analytics platform. The visual style is professional and minimalist, utilizing shades of slate and light grey to maintain a high-trust, enterprise software atmosphere. The image is clean and high-contrast, fitting perfectly within a modern light-mode UI design focused on productivity and sophisticated technical services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUDC7KBJLaqbbLk6tYWT_7dv8-_d7QX5ox_Ll7XLeitjtv7ls3lXneImaH-zV-tz8MhJN-6QK8d2wz1cklh4gd4S6nJOKwNghsl47331zxfqRp01y--ndqTPg3fReDzf66OFHUM4ParEwKfVwFT26q63PCjLErcgcNQgLek8yrvA7EX6lZWatIaWmphmMQlTtClW10fNMh4fYmoOHLB9MMgE0A9_7zfUX-GppFRf7EnCUKTA02pxwZs0OWuKGHljJ4tDMcehWZu4jm">
+    </div>
+    </footer>
+    </main>
+    <script>
+            function togglePassword() {
+                const input = document.getElementById('password');
+                const icon = document.getElementById('eyeIcon');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.textContent = 'visibility_off';
+                } else {
+                    input.type = 'password';
+                    icon.textContent = 'visibility';
+                }
+            }
+    
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = e.target.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
+                
+                // Micro-interaction simulation
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+                btn.disabled = true;
+    
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);
+            });
+        </script>
+    </body></html>

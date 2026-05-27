@@ -1,0 +1,350 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NexusDesk AI - Support Agent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {error: "#ba1a1a", "secondary-container": "#a0f399", primary: "#004e9f", "primary-container": "#0066cc", "tertiary-fixed": "#ffdcbe", "bg-app": "#F5F5F5", background: "#fbf9f8", "on-error": "#ffffff", "text-tertiary": "#999999", "surface-container-highest": "#e4e2e1", "surface-container": "#f0eded", "on-secondary": "#ffffff", "inverse-primary": "#aac7ff", "on-tertiary-fixed": "#2c1600", secondary: "#1b6d24", "error-red": "#E60012", "on-primary-fixed": "#001b3e", "on-secondary-fixed": "#002204", "secondary-fixed": "#a3f69c", "surface-variant": "#e4e2e1", "on-primary-fixed-variant": "#00458e", "surface-container-high": "#eae8e7", "primary-fixed-dim": "#aac7ff", "secondary-fixed-dim": "#88d982", "on-secondary-container": "#217128", "on-tertiary-container": "#ffe4cd", "inverse-on-surface": "#f3f0f0", "tertiary-fixed-dim": "#ffb870", "on-tertiary-fixed-variant": "#693c00", "on-primary-container": "#dfe8ff", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "tertiary-container": "#995900", "ai-gold": "#FFC107", "surface-container-lowest": "#ffffff", outline: "#727784", "outline-variant": "#c1c6d5", "surface-dim": "#dcd9d9", "primary-fixed": "#d7e3ff", "on-secondary-fixed-variant": "#005312", "ai-gold-subtle": "#FFF9C4", tertiary: "#774400", "border-default": "#E0E0E0", "inverse-surface": "#303030", "text-secondary": "#666666", surface: "#fbf9f8", "on-surface-variant": "#414753", "surface-white": "#FFFFFF", "on-background": "#1b1c1c", "surface-bright": "#fbf9f8", "on-primary": "#ffffff", "surface-container-low": "#f6f3f2", "on-error-container": "#93000a", "surface-tint": "#005cba", "on-surface": "#1b1c1c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"sidebar-width": "240px", xl: "24px", xxl: "32px", "layout-gutter": "16px", sm: "8px", md: "12px", "layout-margin": "24px", lg: "16px", xs: "4px", base: "8px"}, fontFamily: {"body-default": ["Inter"], "body-sm": ["Inter"], "code-data": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "label-bold": ["Inter"], "title-card": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"body-default": ["14px", {lineHeight: "22px", fontWeight: "400"}], "body-sm": ["12px", {lineHeight: "18px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", letterSpacing: "-0.2px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.3px", fontWeight: "600"}], "label-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "title-card": ["18px", {lineHeight: "24px", fontWeight: "600"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ai-glow {
+            box-shadow: 0 0 12px rgba(255, 193, 7, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E0E0E0; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-bg-app font-body-default text-on-surface overflow-hidden h-screen flex">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container dark:bg-surface-dim flex flex-col border-r border-border-default dark:border-outline-variant z-40">
+<div class="p-lg flex items-center gap-sm">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-headline-sm" data-icon="psychology">psychology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-black text-primary dark:text-primary-fixed leading-none">Support Ops</span>
+<span class="text-body-sm text-text-secondary">Enterprise Tier</span>
+</div>
+</div>
+<div class="px-sm mt-md">
+<button class="w-full py-md px-lg bg-primary text-on-primary rounded-lg font-label-bold flex items-center justify-center gap-sm hover:opacity-90 active:scale-[0.98] transition-all mb-lg shadow-sm" onclick="window.location.href='create_ticket.html'">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                New Ticket
+            </button>
+</div>
+<nav class="flex-1 px-sm space-y-xs custom-scrollbar overflow-y-auto">
+<div class="py-2 px-lg bg-primary-container text-on-primary-container dark:bg-primary dark:text-on-primary rounded-lg mx-2 flex items-center gap-md font-label-bold cursor-pointer" onclick="window.location.href='dashboard.html'">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="py-2 px-lg text-text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-lg mx-2 flex items-center justify-between gap-md font-label-bold cursor-pointer transition-all duration-150 group" onclick="window.location.href='dashboard.html'">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span>Tickets</span>
+</div>
+<span class="bg-surface-variant text-on-surface px-1.5 rounded text-[10px]">10</span>
+</div>
+<div class="mt-xl mb-sm px-lg uppercase text-[10px] tracking-wider text-text-tertiary font-bold">Queues</div>
+<div class="py-2 px-lg text-text-secondary hover:bg-surface-container-highest rounded-lg mx-2 flex items-center justify-between font-label-bold cursor-pointer transition-all">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+<span>Assigned to Me</span>
+</div>
+<span class="bg-primary text-on-primary px-1.5 rounded text-[10px]">7</span>
+</div>
+<div class="py-2 px-lg text-text-secondary hover:bg-surface-container-highest rounded-lg mx-2 flex items-center justify-between font-label-bold cursor-pointer transition-all">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="group">group</span>
+<span>Unassigned</span>
+</div>
+<span class="bg-error text-on-error px-1.5 rounded text-[10px]">3</span>
+</div>
+<div class="py-2 px-lg text-text-secondary hover:bg-surface-container-highest rounded-lg mx-2 flex items-center gap-md font-label-bold cursor-pointer transition-all mt-md" onclick="window.location.href='roles.html'">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Customers</span>
+</div>
+<div class="py-2 px-lg text-text-secondary hover:bg-surface-container-highest rounded-lg mx-2 flex items-center gap-md font-label-bold cursor-pointer transition-all" onclick="window.location.href='dashboard_user.html'">
+<span class="material-symbols-outlined" data-icon="book">book</span>
+<span>Knowledge Base</span>
+</div>
+<div class="py-2 px-lg text-text-secondary hover:bg-surface-container-highest rounded-lg mx-2 flex items-center gap-md font-label-bold cursor-pointer transition-all" onclick="window.location.href='analytics.html'">
+<span class="material-symbols-outlined text-ai-gold" data-icon="psychology">psychology</span>
+<span class="flex items-center gap-xs">AI Insights <span class="bg-ai-gold-subtle text-tertiary text-[8px] px-1 rounded border border-ai-gold/20">PRO</span></span>
+</div>
+</nav>
+<div class="p-sm mt-auto border-t border-border-default">
+<div class="py-2 px-lg text-text-secondary hover:bg-surface-container-highest rounded-lg mx-2 flex items-center gap-md font-label-bold cursor-pointer transition-all" onclick="window.location.href='dashboard_user.html'">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Help Center</span>
+</div>
+<div class="py-2 px-lg text-error hover:bg-error-container rounded-lg mx-2 flex items-center gap-md font-label-bold cursor-pointer transition-all" onclick="window.location.href='login.html'">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Log Out</span>
+</div>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<main class="flex-1 ml-sidebar-width flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between w-full px-layout-margin h-16 bg-surface-white dark:bg-inverse-surface shadow-sm transition-all duration-200">
+<div class="flex items-center gap-xl">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-secondary" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-body-sm w-80 focus:ring-2 focus:ring-primary-container outline-none transition-all" placeholder="Search tickets, customers, help docs..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="p-2 text-text-secondary hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface-white"></span>
+</button>
+<button class="p-2 text-text-secondary hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 text-text-secondary hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-border-default mx-sm"></div>
+<div class="flex items-center gap-md cursor-pointer hover:bg-surface-container-low p-1 rounded-lg transition-all">
+<img alt="User profile" class="w-8 h-8 rounded-full border border-border-default" data-alt="A professional headshot of a diverse support agent in a modern office setting. The lighting is soft and natural, emphasizing a trust-worthy and competent expression. The agent is wearing a clean, minimalist charcoal grey sweater. High-end portrait photography style with a shallow depth of field and soft-focus office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNzMTE94XsbAIBuyprCFjd7CGuXcC3f6lTih7ifJvG9RKelzvqwoGwrSm9_txgcFHBUUqE-YAo5pDbA7523B0Uii22VBPLOEH0CSz_oKgJhSpKobrqF0RiOXEXd3loJqjid1ggxV356eUG0zaMPt2ggMLXVefHwNjDoPni2NpeANCaIXaUTPeTnncIYE40d1KisXBUU-o7R-zuBIslsp2zRjk1oj9Of8j4SVaaJ-ytr5D2cNTk48TPPai6X6Trpptv42ZYhGuaJOAI">
+<div class="hidden lg:flex flex-col">
+<span class="text-body-sm font-label-bold leading-none">Marcus Chen</span>
+<span class="text-[10px] text-text-secondary">Senior Agent</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Ticket Queue Area -->
+<section class="flex-1 p-layout-margin flex flex-col gap-lg overflow-y-auto custom-scrollbar">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Ticket Queue</h1>
+<p class="text-body-sm text-text-secondary">Manage your active support requests</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-1.5 border border-border-default bg-surface-white rounded-lg text-body-sm flex items-center gap-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                            Filter
+                        </button>
+<button class="px-md py-1.5 border border-border-default bg-surface-white rounded-lg text-body-sm flex items-center gap-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[18px]" data-icon="sort">sort</span>
+                            Sort
+                        </button>
+</div>
+</div>
+<!-- Table Content -->
+<div class="bg-surface-white rounded-xl shadow-sm border border-border-default overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-border-default">
+<th class="px-lg py-3 font-label-bold text-[11px] uppercase tracking-wider text-text-tertiary">ID</th>
+<th class="px-lg py-3 font-label-bold text-[11px] uppercase tracking-wider text-text-tertiary">Ticket Title</th>
+<th class="px-lg py-3 font-label-bold text-[11px] uppercase tracking-wider text-text-tertiary">Status</th>
+<th class="px-lg py-3 font-label-bold text-[11px] uppercase tracking-wider text-text-tertiary">Priority</th>
+<th class="px-lg py-3 font-label-bold text-[11px] uppercase tracking-wider text-text-tertiary">Category</th>
+<th class="px-lg py-3 font-label-bold text-[11px] uppercase tracking-wider text-text-tertiary">Created</th>
+<th class="px-lg py-3 font-label-bold text-[11px] uppercase tracking-wider text-text-tertiary"></th>
+</tr>
+</thead>
+<tbody class="text-body-default">
+<tr class="border-b border-border-default hover:bg-surface-container-lowest transition-colors group cursor-pointer" onclick="window.location.href='details.html'">
+<td class="px-lg py-4 font-code-data text-text-secondary">#TKT-00152</td>
+<td class="px-lg py-4 font-medium">Billing discrepancy on invoice #9921</td>
+<td class="px-lg py-4"><span class="bg-surface-container text-on-surface-variant text-[11px] font-semibold px-2 py-0.5 rounded-full">Open</span></td>
+<td class="px-lg py-4"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-error"></span><span class="text-body-sm">High</span></div></td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">Payments</td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">12m ago</td>
+<td class="px-lg py-4 text-right"><span class="material-symbols-outlined text-ai-gold" data-icon="psychology" data-weight="fill">psychology</span></td>
+</tr>
+<tr class="border-l-4 border-l-primary bg-primary-container/10 border-b border-border-default cursor-pointer" onclick="window.location.href='details.html'">
+<td class="px-lg py-4 font-code-data text-primary font-bold">#TKT-00148</td>
+<td class="px-lg py-4 font-bold text-on-surface">Printer not connecting to wireless network</td>
+<td class="px-lg py-4"><span class="bg-secondary-container text-on-secondary-container text-[11px] font-semibold px-2 py-0.5 rounded-full">In Progress</span></td>
+<td class="px-lg py-4"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-ai-gold"></span><span class="text-body-sm">Med</span></div></td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">Hardware</td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">45m ago</td>
+<td class="px-lg py-4 text-right"><span class="material-symbols-outlined text-ai-gold" data-icon="psychology" data-weight="fill">psychology</span></td>
+</tr>
+<tr class="border-b border-border-default hover:bg-surface-container-lowest transition-colors group cursor-pointer" onclick="window.location.href='details.html'">
+<td class="px-lg py-4 font-code-data text-text-secondary">#TKT-00145</td>
+<td class="px-lg py-4 font-medium">Reset password link expired</td>
+<td class="px-lg py-4"><span class="bg-surface-container text-on-surface-variant text-[11px] font-semibold px-2 py-0.5 rounded-full">Open</span></td>
+<td class="px-lg py-4"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-body-sm">Low</span></div></td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">Security</td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">2h ago</td>
+<td class="px-lg py-4 text-right"></td>
+</tr>
+<tr class="border-b border-border-default hover:bg-surface-container-lowest transition-colors group cursor-pointer" onclick="window.location.href='details.html'">
+<td class="px-lg py-4 font-code-data text-text-secondary">#TKT-00140</td>
+<td class="px-lg py-4 font-medium">Feature request: Bulk upload users</td>
+<td class="px-lg py-4"><span class="bg-secondary-container text-on-secondary-container text-[11px] font-semibold px-2 py-0.5 rounded-full">Resolved</span></td>
+<td class="px-lg py-4"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-body-sm">Low</span></div></td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">General</td>
+<td class="px-lg py-4 text-text-secondary text-body-sm">5h ago</td>
+<td class="px-lg py-4 text-right"><span class="material-symbols-outlined text-ai-gold" data-icon="psychology" data-weight="fill">psychology</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Metrics Bento Mini -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="bg-surface-white p-lg rounded-xl border border-border-default shadow-sm flex flex-col gap-xs">
+<span class="text-body-sm text-text-secondary font-medium">Avg. Response Time</span>
+<div class="flex items-baseline gap-sm">
+<span class="text-headline-md font-bold">14m</span>
+<span class="text-[11px] text-secondary font-bold flex items-center">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_downward">arrow_downward</span> 2.5%
+                            </span>
+</div>
+</div>
+<div class="bg-surface-white p-lg rounded-xl border border-border-default shadow-sm flex flex-col gap-xs">
+<span class="text-body-sm text-text-secondary font-medium">Customer CSAT</span>
+<div class="flex items-baseline gap-sm">
+<span class="text-headline-md font-bold">4.9/5.0</span>
+<span class="text-[11px] text-secondary font-bold flex items-center">
+<span class="material-symbols-outlined text-sm" data-icon="stars">stars</span> TOP 5%
+                            </span>
+</div>
+</div>
+<div class="bg-surface-white p-lg rounded-xl border border-border-default shadow-sm flex flex-col gap-xs border-l-4 border-l-ai-gold ai-glow bg-ai-gold-subtle/20">
+<span class="text-body-sm text-tertiary font-medium">AI Ticket Deflection</span>
+<div class="flex items-baseline gap-sm">
+<span class="text-headline-md font-bold text-tertiary">68%</span>
+<span class="text-[11px] text-tertiary font-bold px-1.5 bg-ai-gold/10 rounded">Efficiency Boost</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Details Panel (Quick Preview) -->
+<aside class="w-[400px] bg-surface-white border-l border-border-default flex flex-col h-full overflow-hidden shadow-xl z-10">
+<div class="p-lg border-b border-border-default flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<span class="font-code-data text-primary font-bold">#TKT-00148</span>
+<div class="flex gap-xs">
+<button class="p-1.5 text-text-secondary hover:bg-surface-container-low rounded transition-all" onclick="window.location.href='details.html'"><span class="material-symbols-outlined text-[20px]" data-icon="open_in_new">open_in_new</span></button>
+<button class="p-1.5 text-text-secondary hover:bg-surface-container-low rounded transition-all"><span class="material-symbols-outlined text-[20px]" data-icon="close">close</span></button>
+</div>
+</div>
+<h2 class="font-title-card text-title-card">Printer not connecting to wireless network</h2>
+<div class="flex items-center gap-md">
+<img alt="Customer avatar" class="w-10 h-10 rounded-lg border border-border-default" data-alt="A portrait photo of a tech-savvy user in their 30s, looking frustrated yet hopeful, sitting in a home office with soft ambient lighting. The background features blurred tech gadgets and a warm, domestic atmosphere. High-quality digital photography with natural colors and high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjbysrnU1E3g3TvBH9e83Du2dv6VVDmpJjfs869HIYR2qib_YJBfN903cRtpTLO1DYLuQYbq4LIJQCN4B64mTKtLXVr6RpwZiK2mN2yT-mq9wAjMHb4_RBpXJC-hmqy9F9F-VwBbd4KdEE8A0ETBax6EH_b4PRAWTns7JEkcPnWZMRPfDkhxynPRGNp9NL87f-53cMkos85x3LakuiT3EjY3zD1Wl9oEkmLqPT_vT_4oKnntwA_UQPX0RmfgZxnQANuRcBBK_fZCqT">
+<div class="flex flex-col">
+<span class="font-label-bold">Sarah Jenkins</span>
+<span class="text-body-sm text-text-secondary">Growth Manager @ Acme Corp</span>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-lg flex flex-col gap-xl">
+<!-- AI Insights Section -->
+<div class="p-lg bg-ai-gold-subtle rounded-xl border-l-4 border-l-ai-gold ai-glow relative overflow-hidden">
+<div class="flex items-center gap-sm mb-md text-tertiary">
+<span class="material-symbols-outlined text-[20px]" data-icon="psychology" data-weight="fill">psychology</span>
+<span class="font-label-bold uppercase tracking-wider text-[10px]">AI Co-Pilot Assistance</span>
+</div>
+<div class="space-y-md">
+<div>
+<p class="text-[11px] font-bold text-tertiary/70 uppercase">Classification</p>
+<p class="text-body-default font-semibold text-tertiary">Hardware Issue (87% confidence)</p>
+</div>
+<div class="bg-surface-white/60 p-md rounded-lg border border-ai-gold/30">
+<p class="text-[11px] font-bold text-tertiary/70 uppercase mb-xs">Suggested Response</p>
+<p class="text-body-sm text-on-surface italic">"Hi Sarah, I'm sorry you're having trouble with your wireless printer. Based on your model, this often happens if the 5GHz and 2.4GHz bands aren't separated. Have you tried resetting the..."</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-lg text-body-sm font-label-bold hover:opacity-90 transition-all">Accept</button>
+<button class="flex-1 py-2 bg-surface-white border border-border-default text-on-surface rounded-lg text-body-sm font-label-bold hover:bg-surface-container-low transition-all">Edit</button>
+<button class="px-2 py-2 bg-surface-white border border-border-default text-error rounded-lg hover:bg-error-container/20 transition-all"><span class="material-symbols-outlined text-[18px]" data-icon="close">close</span></button>
+</div>
+</div>
+</div>
+<!-- Conversation History -->
+<div class="flex flex-col gap-lg">
+<h3 class="font-label-bold text-text-secondary uppercase text-[10px] tracking-widest">Recent Activity</h3>
+<div class="space-y-md">
+<div class="flex gap-md">
+<div class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div>
+<div>
+<p class="text-body-sm font-semibold">User reported issue</p>
+<p class="text-[11px] text-text-tertiary">Today, 10:24 AM</p>
+<div class="mt-sm p-md bg-surface-container-low rounded-lg text-body-sm text-on-surface-variant">
+                                        "My printer was working fine yesterday but suddenly stopped connecting to the Wi-Fi. I've tried turning it off and on but no luck."
+                                    </div>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div>
+<p class="text-body-sm font-semibold">System Diagnostics</p>
+<p class="text-[11px] text-text-tertiary">Today, 10:25 AM</p>
+<p class="text-body-sm text-text-secondary">Network ping to device timed out. IP: 192.168.1.104</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions Footer -->
+<div class="p-lg border-t border-border-default bg-surface-container-low">
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-sm py-2.5 bg-primary text-on-primary rounded-xl font-label-bold shadow-md hover:translate-y-[-1px] active:scale-[0.98] transition-all" onclick="window.location.href='details.html'">
+<span class="material-symbols-outlined text-[18px]" data-icon="reply">reply</span>
+                            Respond
+                        </button>
+<button class="flex items-center justify-center gap-sm py-2.5 bg-surface-white border border-border-default text-on-surface rounded-xl font-label-bold hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="forward">forward</span>
+                            Escalate
+                        </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Contextual FAB (Only for main screens) -->
+<button class="fixed bottom-xxl right-[424px] w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-30 group">
+<span class="material-symbols-outlined text-[28px]" data-icon="chat">chat</span>
+<span class="absolute right-full mr-4 px-3 py-1.5 bg-inverse-surface text-inverse-on-surface text-body-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Internal Chat</span>
+</button>
+<script src="shared-sidebar.js"></script>
+<script>
+        // Micro-interaction for table rows
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                // Remove active styling from others
+                document.querySelectorAll('tbody tr').forEach(r => {
+                    r.classList.remove('border-l-4', 'border-l-primary', 'bg-primary-container/10', 'font-bold');
+                    r.classList.add('hover:bg-surface-container-lowest');
+                });
+                // Add active styling to clicked row
+                row.classList.add('border-l-4', 'border-l-primary', 'bg-primary-container/10');
+                row.classList.remove('hover:bg-surface-container-lowest');
+                // Simulate loading state in right panel
+                const detailPanel = document.querySelector('aside');
+                detailPanel.style.opacity = '0.5';
+                setTimeout(() => {
+                    detailPanel.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // Pulsing AI icon animation logic
+        setInterval(() => {
+            const aiIcons = document.querySelectorAll('[data-icon="psychology"]');
+            aiIcons.forEach(icon => {
+                icon.style.transform = 'scale(1.1)';
+                icon.style.transition = 'transform 0.3s ease';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 300);
+            });
+        }, 3000);
+    </script>
+</body></html>

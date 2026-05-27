@@ -1,0 +1,194 @@
+<!DOCTYPE html><html class="" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Create Support Ticket | NexusDesk AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <style>
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .ai-glow-focus:focus-within {
+                box-shadow: 0 0 0 2px #0066CC;
+                border-color: #0066CC;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
+    <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"text-tertiary": "#999999", "surface-bright": "#fbf9f8", secondary: "#1b6d24", "error-red": "#E60012", "secondary-container": "#a0f399", "on-primary": "#ffffff", "surface-white": "#FFFFFF", "surface-tint": "#005cba", "on-surface": "#1b1c1c", "on-surface-variant": "#414753", "primary-fixed-dim": "#aac7ff", primary: "#004e9f", "on-secondary-fixed-variant": "#005312", "surface-container-high": "#eae8e7", "on-primary-fixed-variant": "#00458e", "error-container": "#ffdad6", "ai-gold-subtle": "#FFF9C4", "inverse-primary": "#aac7ff", "on-background": "#1b1c1c", "on-tertiary": "#ffffff", "border-default": "#E0E0E0", outline: "#727784", "tertiary-fixed-dim": "#ffb870", "primary-container": "#0066cc", surface: "#fbf9f8", "ai-gold": "#FFC107", "surface-container": "#f0eded", "tertiary-fixed": "#ffdcbe", "outline-variant": "#c1c6d5", "on-secondary-container": "#217128", "on-tertiary-fixed-variant": "#693c00", background: "#fbf9f8", "surface-variant": "#e4e2e1", "secondary-fixed": "#a3f69c", "inverse-on-surface": "#f3f0f0", "surface-container-lowest": "#ffffff", "surface-container-low": "#f6f3f2", "on-secondary": "#ffffff", error: "#ba1a1a", "on-error": "#ffffff", "surface-dim": "#dcd9d9", "tertiary-container": "#995900", "primary-fixed": "#d7e3ff", "on-primary-container": "#dfe8ff", "inverse-surface": "#303030", "secondary-fixed-dim": "#88d982", "bg-app": "#F5F5F5", "on-primary-fixed": "#001b3e", "surface-container-highest": "#e4e2e1", "on-tertiary-fixed": "#2c1600", "on-tertiary-container": "#ffe4cd", "on-error-container": "#93000a", "text-secondary": "#666666", "on-secondary-fixed": "#002204", tertiary: "#774400"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"sidebar-width": "240px", xxl: "32px", "layout-margin": "24px", "layout-gutter": "16px", md: "12px", lg: "16px", xs: "4px", xl: "24px", sm: "8px", base: "8px"}, fontFamily: {"display-lg": ["Inter"], "badge-cap": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "title-card": ["Inter"], "code-data": ["JetBrains Mono"], "headline-sm": ["Inter"], "label-bold": ["Inter"], "body-lg-mobile": ["Inter"], "body-default": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"display-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.5px", fontWeight: "700"}], "badge-cap": ["11px", {lineHeight: "14px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.3px", fontWeight: "600"}], "body-sm": ["12px", {lineHeight: "18px", fontWeight: "400"}], "title-card": ["18px", {lineHeight: "24px", fontWeight: "600"}], "code-data": ["13px", {lineHeight: "20px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", letterSpacing: "-0.2px", fontWeight: "600"}], "label-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "body-lg-mobile": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-default": ["14px", {lineHeight: "22px", fontWeight: "400"}]}}}};</script>
+    </head>
+    <body class="bg-bg-app font-body-default text-on-surface antialiased min-h-screen flex items-center justify-center p-xl">
+    <!-- Modal Backdrop -->
+    <div class="fixed inset-0 bg-on-surface/50 backdrop-blur-sm z-40"></div>
+    <!-- Create Support Ticket Modal -->
+    <main class="relative z-50 w-full max-w-[600px] bg-surface-white rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+    <!-- Header -->
+    <header class="px-xl pt-xl pb-lg border-b border-border-default flex justify-between items-start">
+    <div>
+    <h1 class="font-headline-md text-headline-md text-on-surface">Create Support Ticket</h1>
+    <p class="font-body-default text-text-secondary mt-xs">Tell us what's wrong and we'll resolve it</p>
+    </div>
+    <button aria-label="Close" class="p-sm rounded-full hover:bg-surface-container-low transition-colors text-text-tertiary" onclick="window.location.href='dashboard_user.html'" type="button">
+    <span class="material-symbols-outlined">close</span>
+    </button>
+    </header>
+    <!-- Form Content -->
+    <form class="p-xl space-y-xl max-h-[768px] overflow-y-auto scrollbar-hide" id="ticketForm">
+    <!-- Title Field -->
+    <div class="space-y-sm">
+    <label class="font-label-bold text-label-bold text-on-surface flex items-center gap-xs" for="ticket-title">
+                        Title <span class="text-error">*</span>
+    </label>
+    <div class="relative group">
+    <input class="w-full px-lg py-md bg-surface-white border border-border-default rounded-lg font-body-default text-on-surface placeholder:text-text-tertiary outline-none transition-all ai-glow-focus" id="ticket-title" placeholder="My printer is not connecting" required="" type="text">
+    </div>
+    </div>
+    <!-- Two Column Layout: Category & Priority -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+    <!-- Category Dropdown -->
+    <div class="space-y-sm">
+    <label class="font-label-bold text-label-bold text-on-surface" for="category">Category</label>
+    <select class="w-full px-lg py-md bg-surface-white border border-border-default rounded-lg font-body-default text-on-surface outline-none transition-all ai-glow-focus appearance-none" id="category">
+    <option>Hardware</option>
+    <option>Software</option>
+    <option>Network</option>
+    <option>Access</option>
+    <option>Other</option>
+    </select>
+    </div>
+    <!-- Priority Selection -->
+    <div class="space-y-sm">
+    <label class="font-label-bold text-label-bold text-on-surface">Priority</label>
+    <div class="flex items-center gap-xs">
+    <label class="relative flex-1 cursor-pointer group">
+    <input class="sr-only peer" name="priority" type="radio" value="low">
+    <div class="h-10 flex items-center justify-center rounded-lg border border-border-default bg-surface-container-lowest peer-checked:border-secondary peer-checked:bg-secondary-container/20 transition-all text-body-sm">
+    <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span>
+                                    Low
+                                </div>
+    </label>
+    <label class="relative flex-1 cursor-pointer group">
+    <input checked="" class="sr-only peer" name="priority" type="radio" value="medium">
+    <div class="h-10 flex items-center justify-center rounded-lg border border-border-default bg-surface-container-lowest peer-checked:border-ai-gold peer-checked:bg-ai-gold-subtle/30 transition-all text-body-sm">
+    <span class="w-2 h-2 rounded-full bg-ai-gold mr-2"></span>
+                                    Mid
+                                </div>
+    </label>
+    <label class="relative flex-1 cursor-pointer group">
+    <input class="sr-only peer" name="priority" type="radio" value="high">
+    <div class="h-10 flex items-center justify-center rounded-lg border border-border-default bg-surface-container-lowest peer-checked:border-error peer-checked:bg-error-container/40 transition-all text-body-sm">
+    <span class="w-2 h-2 rounded-full bg-error mr-2"></span>
+                                    High
+                                </div>
+    </label>
+    </div>
+    </div>
+    </div>
+    <!-- Description with WYSIWYG Mock -->
+    <div class="space-y-sm">
+    <label class="font-label-bold text-label-bold text-on-surface flex items-center gap-xs" for="description">
+                        Description <span class="text-error">*</span>
+    </label>
+    <div class="border border-border-default rounded-lg overflow-hidden ai-glow-focus transition-all">
+    <!-- Toolbar -->
+    <div class="flex items-center gap-xs p-sm bg-surface-container-low border-b border-border-default">
+    <button class="p-xs hover:bg-surface-variant rounded transition-colors" title="Bold" type="button"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+    <button class="p-xs hover:bg-surface-variant rounded transition-colors" title="Italic" type="button"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+    <button class="p-xs hover:bg-surface-variant rounded transition-colors" title="List" type="button"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+    <div class="w-px h-4 bg-border-default mx-xs"></div>
+    <button class="p-xs hover:bg-surface-variant rounded transition-colors" title="Link" type="button"><span class="material-symbols-outlined text-[20px]">link</span></button>
+    <button class="p-xs hover:bg-surface-variant rounded transition-colors" title="Code" type="button"><span class="material-symbols-outlined text-[20px]">code</span></button>
+    </div>
+    <textarea class="w-full p-lg font-body-default text-on-surface placeholder:text-text-tertiary border-none focus:ring-0 resize-none" id="description" placeholder="Provide as much detail as possible..." required="" rows="5"></textarea>
+    </div>
+    </div>
+    <!-- AI Insight Tip (Style Guide Match) -->
+    <div class="bg-ai-gold-subtle/20 border-l-2 border-ai-gold p-lg rounded-r-lg flex gap-lg">
+    <span class="material-symbols-outlined text-ai-gold" data-weight="fill">psychology</span>
+    <div>
+    <p class="font-label-bold text-label-bold text-on-tertiary-fixed-variant uppercase tracking-wider">AI Suggestion</p>
+    <p class="font-body-sm text-on-surface-variant mt-xs">Including a screenshot of the error message helps our technicians resolve tickets 40% faster.</p>
+    </div>
+    </div>
+    <!-- File Attachment Zone -->
+    <div class="space-y-sm">
+    <label class="font-label-bold text-label-bold text-on-surface">Attachments</label>
+    <div class="border-2 border-dashed border-border-default rounded-xl p-xl flex flex-col items-center justify-center bg-surface-container-lowest hover:border-primary-container hover:bg-primary-fixed/10 transition-all cursor-pointer group" id="dropzone">
+    <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+    <span class="material-symbols-outlined text-primary text-[28px]">upload_file</span>
+    </div>
+    <p class="font-body-default text-on-surface font-medium text-center">Drag &amp; drop files or <span class="text-primary underline">browse</span></p>
+    <p class="font-body-sm text-text-tertiary mt-xs">PDF, PNG, JPG, DOCX (Max 10MB)</p>
+    <input accept=".pdf,.png,.jpg,.docx" class="hidden" multiple="" type="file">
+    </div>
+    </div>
+    </form>
+    <!-- Actions -->
+    <footer class="px-xl py-lg bg-surface-container-low border-t border-border-default flex items-center justify-end gap-lg">
+    <button class="px-xl py-md font-label-bold text-label-bold text-text-secondary hover:text-on-surface hover:bg-surface-variant rounded-lg transition-all" onclick="window.location.href='dashboard_user.html'" type="button">
+                    Cancel
+                </button>
+    <button class="px-xxl py-md font-label-bold text-label-bold text-white bg-primary-container hover:bg-primary rounded-lg shadow-sm hover:shadow-md active:scale-95 transition-all" form="ticketForm" type="submit">
+                    Create Ticket
+                </button>
+    </footer>
+    </main>
+    <!-- Visual Polish: Background Elements -->
+    <div class="fixed top-0 right-0 p-xxl opacity-10 pointer-events-none select-none">
+    <span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'wght' 100;">confirmation_number</span>
+    </div>
+    <script>
+            // Micro-interaction for dropzone
+            const dropzone = document.getElementById('dropzone');
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropzone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    dropzone.classList.add('border-primary-container', 'bg-primary-fixed/20');
+                }, false);
+            });
+    
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropzone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    dropzone.classList.remove('border-primary-container', 'bg-primary-fixed/20');
+                }, false);
+            });
+    
+            dropzone.addEventListener('drop', (e) => {
+                const files = e.dataTransfer.files;
+                if(files.length > 0) {
+                    alert(`${files.length} file(s) ready for upload.`);
+                }
+            });
+    
+            // Form Submission Effect
+            document.getElementById('ticketForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button[type="submit"]');
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin mr-2">progress_activity</span> Processing...';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined mr-2">check_circle</span> Ticket Created';
+                    btn.classList.replace('bg-primary-container', 'bg-secondary');
+                    setTimeout(() => {
+                        window.location.href = 'dashboard_user.html';
+                    }, 1000);
+                }, 1500);
+            });
+    
+            // WYSIWYG Mock interaction
+            const toolbarButtons = document.querySelectorAll('button[type="button"]');
+            toolbarButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.classList.toggle('bg-primary-fixed');
+                });
+            });
+        </script>
+    </body></html>

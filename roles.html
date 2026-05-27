@@ -1,0 +1,406 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NexusDesk AI - User Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <style>
+            body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+            .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+            .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+            .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+            .custom-scrollbar::-webkit-scrollbar-thumb { background: #E0E0E0; border-radius: 10px; }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #CCCCCC; }
+        </style>
+    <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-background": "#1b1c1c", "on-primary": "#ffffff", "inverse-surface": "#303030", outline: "#727784", "inverse-on-surface": "#f3f0f0", "bg-app": "#F5F5F5", "primary-container": "#0066cc", "error-red": "#E60012", "on-tertiary-fixed": "#2c1600", "text-secondary": "#666666", "surface-bright": "#fbf9f8", "primary-fixed": "#d7e3ff", "on-surface": "#1b1c1c", "error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb870", "surface-dim": "#dcd9d9", error: "#ba1a1a", "surface-container-low": "#f6f3f2", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#88d982", "on-surface-variant": "#414753", "secondary-container": "#a0f399", "tertiary-container": "#995900", "surface-variant": "#e4e2e1", "outline-variant": "#c1c6d5", "text-tertiary": "#999999", background: "#fbf9f8", "on-primary-container": "#dfe8ff", "border-default": "#E0E0E0", "surface-container-highest": "#e4e2e1", "inverse-primary": "#aac7ff", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "tertiary-fixed": "#ffdcbe", "primary-fixed-dim": "#aac7ff", "on-tertiary-fixed-variant": "#693c00", "ai-gold": "#FFC107", secondary: "#1b6d24", "ai-gold-subtle": "#FFF9C4", "on-secondary-fixed": "#002204", "surface-container-high": "#eae8e7", "surface-tint": "#005cba", "surface-container": "#f0eded", "on-error-container": "#93000a", "on-secondary-container": "#217128", "surface-white": "#FFFFFF", tertiary: "#774400", "on-primary-fixed": "#001b3e", primary: "#004e9f", "on-tertiary-container": "#ffe4cd", surface: "#fbf9f8", "on-secondary-fixed-variant": "#005312", "on-primary-fixed-variant": "#00458e", "secondary-fixed": "#a3f69c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {sm: "8px", "sidebar-width": "240px", md: "12px", base: "8px", "layout-gutter": "16px", lg: "16px", xxl: "32px", xl: "24px", "layout-margin": "24px", xs: "4px"}, fontFamily: {"headline-md": ["Inter"], "display-lg": ["Inter"], "code-data": ["jetbrainsMono"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "title-card": ["Inter"], "badge-cap": ["Inter"], "label-bold": ["Inter"], "body-lg-mobile": ["Inter"], "body-default": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.3px", fontWeight: "600"}], "display-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.5px", fontWeight: "700"}], "code-data": ["13px", {lineHeight: "20px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", letterSpacing: "-0.2px", fontWeight: "600"}], "body-sm": ["12px", {lineHeight: "18px", fontWeight: "400"}], "title-card": ["18px", {lineHeight: "24px", fontWeight: "600"}], "badge-cap": ["11px", {lineHeight: "14px", fontWeight: "600"}], "label-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "body-lg-mobile": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-default": ["14px", {lineHeight: "22px", fontWeight: "400"}]}}}};</script>
+    </head>
+    <body class="bg-bg-app text-on-surface overflow-hidden">
+    <div class="flex h-screen overflow-hidden">
+    <!-- SideNavBar - Semantic Shell -->
+    <aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container dark:bg-surface-dim flex flex-col border-r border-border-default dark:border-outline-variant z-40">
+    <div class="p-layout-margin flex items-center space-x-3">
+    <div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-black text-headline-sm">S</div>
+    <div class="flex flex-col">
+    <span class="font-headline-sm text-headline-sm font-black text-primary dark:text-primary-fixed">Support Ops</span>
+    <span class="font-label-bold text-[10px] uppercase tracking-wider text-text-secondary">Enterprise Tier</span>
+    </div>
+    </div>
+    <nav class="flex-1 mt-4 px-2 space-y-1">
+    <a class="flex items-center px-4 py-2 text-text-secondary dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all duration-150 rounded-lg group" href="analytics.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">dashboard</span>
+    <span class="font-label-bold text-label-bold">Dashboard</span>
+    </a>
+    <a class="flex items-center px-4 py-2 text-text-secondary dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all duration-150 rounded-lg group" href="dashboard.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">confirmation_number</span>
+    <span class="font-label-bold text-label-bold">Tickets</span>
+    </a>
+    <!-- ACTIVE ITEM: Customers/Users context -->
+    <a class="flex items-center px-4 py-2 bg-primary-container text-on-primary-container dark:bg-primary dark:text-on-primary rounded-lg mx-2 transition-transform active:scale-[0.98]" href="roles.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">group</span>
+    <span class="font-label-bold text-label-bold">Customers</span>
+    </a>
+    <a class="flex items-center px-4 py-2 text-text-secondary dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all duration-150 rounded-lg group" href="dashboard_user.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">book</span>
+    <span class="font-label-bold text-label-bold">Knowledge Base</span>
+    </a>
+    <a class="flex items-center px-4 py-2 text-text-secondary dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all duration-150 rounded-lg group" href="analytics.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">psychology</span>
+    <span class="font-label-bold text-label-bold">AI Insights</span>
+    </a>
+    <a class="flex items-center px-4 py-2 text-text-secondary dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all duration-150 rounded-lg group" href="configuration.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">diversity_3</span>
+    <span class="font-label-bold text-label-bold">Team</span>
+    </a>
+    </nav>
+    <div class="mt-auto px-4 py-6 space-y-4">
+    <button class="w-full bg-primary-container text-on-primary-container dark:bg-primary dark:text-on-primary py-2.5 rounded-lg font-label-bold text-label-bold flex items-center justify-center space-x-2 shadow-sm hover:shadow-md transition-all active:scale-[0.98]" onclick="window.location.href='create_ticket.html'">
+    <span class="material-symbols-outlined text-[20px]">add</span>
+    <span>New Ticket</span>
+    </button>
+    <div class="pt-4 border-t border-border-default dark:border-outline-variant space-y-1">
+    <a class="flex items-center px-4 py-2 text-text-secondary dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-all rounded-lg group" href="dashboard_user.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">contact_support</span>
+    <span class="font-label-bold text-label-bold">Help Center</span>
+    </a>
+    <a class="flex items-center px-4 py-2 text-text-secondary dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-all rounded-lg group text-error" href="login.html">
+    <span class="material-symbols-outlined mr-3 text-[20px]">logout</span>
+    <span class="font-label-bold text-label-bold">Log Out</span>
+    </a>
+    </div>
+    </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="flex-1 ml-sidebar-width h-screen flex flex-col overflow-hidden relative">
+    <!-- TopNavBar -->
+    <header class="sticky top-0 z-50 flex items-center justify-between w-full px-layout-margin h-16 bg-surface-white dark:bg-inverse-surface shadow-sm transition-all">
+    <div class="flex items-center gap-6">
+    <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">NexusDesk AI</span>
+    <div class="hidden md:flex items-center space-x-2 bg-surface-container-low px-3 py-1.5 rounded-full border border-border-default focus-within:ring-2 ring-primary/20 transition-all">
+    <span class="material-symbols-outlined text-text-tertiary text-[18px]">search</span>
+    <input class="bg-transparent border-none text-body-default outline-none w-48 focus:ring-0 placeholder:text-text-tertiary" placeholder="Global search..." type="text">
+    </div>
+    </div>
+    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-1">
+    <button class="p-2 text-text-secondary dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full relative">
+    <span class="material-symbols-outlined">notifications</span>
+    <span class="absolute top-2 right-2 w-2 h-2 bg-error-red rounded-full border-2 border-surface-white"></span>
+    </button>
+    <button class="p-2 text-text-secondary dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full">
+    <span class="material-symbols-outlined">help</span>
+    </button>
+    <button class="p-2 text-text-secondary dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full">
+    <span class="material-symbols-outlined">settings</span>
+    </button>
+    </div>
+    <div class="w-px h-6 bg-border-default mx-1"></div>
+    <div class="flex items-center space-x-3 cursor-pointer group">
+    <img alt="User Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all" data-alt="A clean, professional headshot of a smiling male executive with short hair, wearing a dark blazer over a crisp white shirt, photographed against a minimalist grey background with soft cinematic lighting to create a high-trust SaaS atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3IUlVdT3vJ3ca8x-k_BFnDGnfumBjqvImQNcg_T9ODJBZI_8470zXYX-j2uleQbkQT61-Rh6SfhOwkPR7IhfyAhz_vAEN1eYMR9a8jVK4xNVlLI7_2eANDC6Cb4iLRy6PIy2T8ng5p_Y655sacO9DLSwuxBdWvwlCcC8nPZ4OEsTKhcf2LO3fjfON_o-57b5VfLc7S6vt8m83L8MuAcob4FmcidXkObqgckfTVh8cPvoREjaRsvYdYvPmohrjPYLtjmd103kcrjDh">
+    <div class="flex flex-col">
+    <span class="font-label-bold text-label-bold text-on-surface">Alex Rivera</span>
+    <span class="text-[10px] text-text-tertiary font-medium">Administrator</span>
+    </div>
+    </div>
+    </div>
+    </header>
+    <!-- Dashboard Content -->
+    <div class="flex-1 overflow-y-auto p-layout-margin custom-scrollbar">
+    <!-- Page Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-xxl">
+    <div>
+    <h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">User Management</h1>
+    <p class="font-body-default text-text-secondary mt-1">Manage platform access, roles, and departmental permissions.</p>
+    </div>
+    <button class="inline-flex items-center px-xl py-lg bg-primary text-on-primary rounded-lg font-label-bold text-label-bold hover:bg-primary-container transition-all shadow-sm active:scale-95 group">
+    <span class="material-symbols-outlined mr-2 text-[20px]">person_add</span>
+                            Add New User
+                        </button>
+    </div>
+    <!-- Filters & Search Bento Cluster -->
+    <div class="bg-surface-white border border-border-default rounded-xl p-xl shadow-sm mb-lg">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
+    <!-- Search Box -->
+    <div class="md:col-span-4 relative">
+    <label class="font-label-bold text-label-bold text-text-secondary mb-2 block">Search</label>
+    <div class="relative group">
+    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-tertiary group-focus-within:text-primary transition-colors">search</span>
+    <input class="w-full pl-10 pr-4 py-2.5 bg-bg-app border border-border-default rounded-lg text-body-default focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none" placeholder="Name or email address..." type="text">
+    </div>
+    </div>
+    <!-- Dropdown Filters -->
+    <div class="md:col-span-2">
+    <label class="font-label-bold text-label-bold text-text-secondary mb-2 block">Status</label>
+    <select class="w-full px-3 py-2.5 bg-bg-app border border-border-default rounded-lg text-body-default focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none appearance-none cursor-pointer">
+    <option>All Statuses</option>
+    <option>Active</option>
+    <option>Inactive</option>
+    <option>Suspended</option>
+    </select>
+    </div>
+    <div class="md:col-span-2">
+    <label class="font-label-bold text-label-bold text-text-secondary mb-2 block">Role</label>
+    <select class="w-full px-3 py-2.5 bg-bg-app border border-border-default rounded-lg text-body-default focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none appearance-none cursor-pointer">
+    <option>All Roles</option>
+    <option>Admin</option>
+    <option>Support Agent</option>
+    <option>End User</option>
+    </select>
+    </div>
+    <div class="md:col-span-3">
+    <label class="font-label-bold text-label-bold text-text-secondary mb-2 block">Department</label>
+    <select class="w-full px-3 py-2.5 bg-bg-app border border-border-default rounded-lg text-body-default focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none appearance-none cursor-pointer">
+    <option>All Departments</option>
+    <option>IT &amp; Engineering</option>
+    <option>Finance</option>
+    <option>Marketing</option>
+    <option>Customer Success</option>
+    </select>
+    </div>
+    <!-- Reset Filter Button -->
+    <div class="md:col-span-1 flex items-end">
+    <button class="w-full h-[42px] flex items-center justify-center border border-border-default rounded-lg text-text-secondary hover:bg-surface-container-low transition-colors active:scale-95" title="Clear Filters">
+    <span class="material-symbols-outlined">filter_list_off</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    <!-- AI Insight Banner (The Highlight Rule) -->
+    <div class="bg-ai-gold-subtle/30 border-l-4 border-ai-gold p-lg rounded-r-lg mb-lg flex items-start gap-4 animate-in fade-in slide-in-from-top-2 duration-500">
+    <span class="material-symbols-outlined text-ai-gold" style="font-variation-settings: 'FILL' 1;">psychology</span>
+    <div>
+    <p class="font-label-bold text-label-bold text-on-tertiary-fixed-variant">AI Insights: User Governance</p>
+    <p class="text-body-sm text-on-tertiary-fixed mt-0.5">We've identified 4 "End User" accounts that haven't logged in for over 90 days. We recommend reviewing them for potential deactivation to optimize license seats.</p>
+    </div>
+    </div>
+    <!-- Data Table Canvas -->
+    <div class="bg-surface-white border border-border-default rounded-xl shadow-sm overflow-hidden">
+    <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+    <thead>
+    <tr class="bg-surface-container-low border-b border-border-default">
+    <th class="px-xl py-lg font-label-bold text-label-bold text-text-secondary uppercase tracking-wider">User</th>
+    <th class="px-xl py-lg font-label-bold text-label-bold text-text-secondary uppercase tracking-wider">Role</th>
+    <th class="px-xl py-lg font-label-bold text-label-bold text-text-secondary uppercase tracking-wider">Department</th>
+    <th class="px-xl py-lg font-label-bold text-label-bold text-text-secondary uppercase tracking-wider">Last Active</th>
+    <th class="px-xl py-lg font-label-bold text-label-bold text-text-secondary uppercase tracking-wider">Status</th>
+    <th class="px-xl py-lg font-label-bold text-label-bold text-text-secondary uppercase tracking-wider text-right">Actions</th>
+    </tr>
+    </thead>
+    <tbody class="divide-y divide-border-default">
+    <!-- Row 1 -->
+    <tr class="hover:bg-surface-container-low/50 transition-colors group">
+    <td class="px-xl py-xl">
+    <div class="flex items-center space-x-3">
+    <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary overflow-hidden">
+    <img alt="Sarah Chen" class="w-full h-full object-cover" data-alt="A professional business headshot of a middle-aged Asian woman with glasses and a soft smile, wearing a modern navy silk blouse, set against an out-of-focus high-end corporate office background with cool natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8c1fOGgi8hsfp7xYP4bweoTbEqDx2_GkAS-qLn6rCIH7zHaa1czOQCRj4Gec29306gn5hmOWHjIE04oJQqr6qi5vE_KxVhQu6-yp33whPxiDYdJFhmkqblC6Gd_tiHseln6MCSj9WIkHQSVa8_kLNKjO2pzrCM9b1k6oQNbGEdgQjJpMZ_XXLmG_YUmYKVQwVo2zdklYTKJsKKMCtL9bZM00Akz4eVRyJEN_eWhKNAF1dVtjdNR-E_UA-vojBrQhaqNxnmlqREu1c">
+    </div>
+    <div class="flex flex-col">
+    <span class="font-title-card text-[15px] text-on-surface">Sarah Chen</span>
+    <span class="text-body-sm text-text-tertiary">sarah.chen@nexusdesk.ai</span>
+    </div>
+    </div>
+    </td>
+    <td class="px-xl py-xl">
+    <span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-bold uppercase tracking-wide">Administrator</span>
+    </td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">IT &amp; Engineering</td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">Today, 10:45 AM</td>
+    <td class="px-xl py-xl">
+    <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-[#E8F5E9] text-[#2E7D32] text-[11px] font-bold">
+    <span class="w-1.5 h-1.5 rounded-full bg-[#2E7D32]"></span>
+    <span>Active</span>
+    </span>
+    </td>
+    <td class="px-xl py-xl text-right">
+    <div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Edit User">
+    <span class="material-symbols-outlined text-[20px]">edit</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Reset Password">
+    <span class="material-symbols-outlined text-[20px]">lock_reset</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:text-error-red hover:bg-error-red/10 rounded-lg transition-all" title="Deactivate">
+    <span class="material-symbols-outlined text-[20px]">block</span>
+    </button>
+    </div>
+    </td>
+    </tr>
+    <!-- Row 2 -->
+    <tr class="hover:bg-surface-container-low/50 transition-colors group">
+    <td class="px-xl py-xl">
+    <div class="flex items-center space-x-3">
+    <div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed-variant overflow-hidden">
+    <img alt="Marcus Thompson" class="w-full h-full object-cover" data-alt="A portrait of a young Black professional man with a short beard and stylish glasses, wearing a neutral-toned crew neck sweater, photographed in a bright studio with soft shadows and a warm color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAUaqHvujOW3OkAjSUR9DAvadmeinMemM5ZF_GzTHBLIv2I7wv-Ndt5isjwja9k23rPq9vkKRUlf_pN92zOLkaWZ7WY9MoWO9aWwbYE4LLaGPnjcqGXqpWZ4XPPzRLZEIXoFvilWxbMalmXOt7UJ3qyQIqSTXm1htuXXRTh-mQYEvaco6cdGwaQUnWBJ5o-o8XumMTRFD0hpp2tcLHK7qN_Yr6DtHuQaOnWxljdINk9oC4Rl64lsmfFs_MCysNcfnAClVJif2unvFQ">
+    </div>
+    <div class="flex flex-col">
+    <span class="font-title-card text-[15px] text-on-surface">Marcus Thompson</span>
+    <span class="text-body-sm text-text-tertiary">m.thompson@nexusdesk.ai</span>
+    </div>
+    </div>
+    </td>
+    <td class="px-xl py-xl">
+    <span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-wide">Support Agent</span>
+    </td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">Customer Success</td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">Oct 24, 2023</td>
+    <td class="px-xl py-xl">
+    <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-surface-variant text-on-surface-variant text-[11px] font-bold">
+    <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+    <span>Inactive</span>
+    </span>
+    </td>
+    <td class="px-xl py-xl text-right">
+    <div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Edit User">
+    <span class="material-symbols-outlined text-[20px]">edit</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Reset Password">
+    <span class="material-symbols-outlined text-[20px]">lock_reset</span>
+    </button>
+    <button class="p-2 text-[#2E7D32] hover:bg-[#E8F5E9] rounded-lg transition-all" title="Activate">
+    <span class="material-symbols-outlined text-[20px]">check_circle</span>
+    </button>
+    </div>
+    </td>
+    </tr>
+    <!-- Row 3 -->
+    <tr class="hover:bg-surface-container-low/50 transition-colors group">
+    <td class="px-xl py-xl">
+    <div class="flex items-center space-x-3">
+    <div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center font-bold text-on-error-container overflow-hidden">
+    <img alt="Elena Rodriguez" class="w-full h-full object-cover" data-alt="A close-up headshot of a Hispanic woman with a professional demeanor, wearing a simple white collared shirt, with her hair neatly pulled back, illuminated by soft window light in a minimalist, airy room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDheUn0v3IcgngZ0eGhitJBLzkES3CyOza6L9H7kH_rHC2fh0ewUaK4i0Hn04Mfz_qdaKmbfoyXCNuE6E5w8rJodrSLo8--dwIfORQujEByxSNqBxqyqeHFECn5kVcYQaxnKmfKr83JeXwI4tehmHJI4CjC7ZVL5Fj1xebHZgj0OsUlV96OZN3QyQvr6M7LpD3tOIsAR1H2r-jtm1l-FMXG9rsvqtfaxP-GRmTlskuCX7nJQUW93qEXy6IdDtVN7te8fvkj534ElZ-M">
+    </div>
+    <div class="flex flex-col">
+    <span class="font-title-card text-[15px] text-on-surface">Elena Rodriguez</span>
+    <span class="text-body-sm text-text-tertiary">elena.rod@external.com</span>
+    </div>
+    </div>
+    </td>
+    <td class="px-xl py-xl">
+    <span class="px-2.5 py-1 rounded-full bg-surface-container text-text-secondary text-[11px] font-bold uppercase tracking-wide">End User</span>
+    </td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">Finance</td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">Sep 12, 2023</td>
+    <td class="px-xl py-xl">
+    <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container text-[11px] font-bold">
+    <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+    <span>Suspended</span>
+    </span>
+    </td>
+    <td class="px-xl py-xl text-right">
+    <div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Edit User">
+    <span class="material-symbols-outlined text-[20px]">edit</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Reset Password">
+    <span class="material-symbols-outlined text-[20px]">lock_reset</span>
+    </button>
+    <button class="p-2 text-[#2E7D32] hover:bg-[#E8F5E9] rounded-lg transition-all" title="Unsuspend">
+    <span class="material-symbols-outlined text-[20px]">restore_from_trash</span>
+    </button>
+    </div>
+    </td>
+    </tr>
+    <!-- Row 4 -->
+    <tr class="hover:bg-surface-container-low/50 transition-colors group">
+    <td class="px-xl py-xl">
+    <div class="flex items-center space-x-3">
+    <div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-on-tertiary-fixed-variant overflow-hidden">
+    <img alt="Liam Foster" class="w-full h-full object-cover" data-alt="A portrait of a confident Caucasian man in his late 20s, with short blond hair and clear blue eyes, wearing a grey polo shirt, photographed with high-key lighting for a clean, modern tech professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgwRLDSLLT-WcgxQLRidSM0VM2lovnZQe-HgRgKv_w-XZRFbS9IjQ3c6HpOtc1wYSCkxWwY-1vigqy7AcwWIf7REyfgqZQJW1uMBHOAvzDWFMByRjsior3Z4J7b_ABoZN-l03m42zTz5bi5aXKCuQmVJBY1ObDCLY7AYNjlBKSK0OkfUpRZT9LkWycSEkn5zeOII10Qu7rd271ltgJXYp9F37tjTXAZbHB_CCT3yIsRxxWw3pUDeA4fZeUoul73_7iBlDSDe4Hsn3w">
+    </div>
+    <div class="flex flex-col">
+    <span class="font-title-card text-[15px] text-on-surface">Liam Foster</span>
+    <span class="text-body-sm text-text-tertiary">l.foster@nexusdesk.ai</span>
+    </div>
+    </div>
+    </td>
+    <td class="px-xl py-xl">
+    <span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-wide">Support Agent</span>
+    </td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">Customer Success</td>
+    <td class="px-xl py-xl font-body-default text-text-secondary">Today, 08:22 AM</td>
+    <td class="px-xl py-xl">
+    <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-[#E8F5E9] text-[#2E7D32] text-[11px] font-bold">
+    <span class="w-1.5 h-1.5 rounded-full bg-[#2E7D32]"></span>
+    <span>Active</span>
+    </span>
+    </td>
+    <td class="px-xl py-xl text-right">
+    <div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Edit User">
+    <span class="material-symbols-outlined text-[20px]">edit</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all" title="Reset Password">
+    <span class="material-symbols-outlined text-[20px]">lock_reset</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:text-error-red hover:bg-error-red/10 rounded-lg transition-all" title="Deactivate">
+    <span class="material-symbols-outlined text-[20px]">block</span>
+    </button>
+    </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <!-- Pagination -->
+    <div class="px-xl py-lg flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border-default">
+    <span class="font-body-sm text-text-secondary">Showing <span class="font-bold text-on-surface">1 - 4</span> of <span class="font-bold text-on-surface">128</span> users</span>
+    <div class="flex items-center space-x-2">
+    <button class="p-2 border border-border-default rounded-lg text-text-tertiary hover:bg-surface-container-low transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+    <span class="material-symbols-outlined">chevron_left</span>
+    </button>
+    <div class="flex items-center px-2">
+    <button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-bold text-label-bold">1</button>
+    <button class="w-8 h-8 rounded-lg text-text-secondary hover:bg-surface-container-low font-label-bold text-label-bold">2</button>
+    <button class="w-8 h-8 rounded-lg text-text-secondary hover:bg-surface-container-low font-label-bold text-label-bold">3</button>
+    <span class="px-2 text-text-tertiary">...</span>
+    <button class="w-8 h-8 rounded-lg text-text-secondary hover:bg-surface-container-low font-label-bold text-label-bold">32</button>
+    </div>
+    <button class="p-2 border border-border-default rounded-lg text-text-secondary hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined">chevron_right</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Toast Notification Container (Floating Bottom Right) -->
+    <div class="fixed bottom-xl right-xl z-[60] flex flex-col gap-2" id="toast-container"></div>
+    </main>
+    </div>
+    <script src="shared-sidebar.js"></script>
+    <script>
+            // Micro-interaction for buttons and actions
+            document.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const title = this.getAttribute('title') || this.innerText.trim();
+                    if (title) {
+                        showToast(`Action triggered: ${title}`);
+                    }
+                });
+            });
+    
+            function showToast(message) {
+                const container = document.getElementById('toast-container');
+                const toast = document.createElement('div');
+                toast.className = 'bg-inverse-surface text-inverse-on-surface px-xl py-md rounded-lg shadow-xl flex items-center space-x-3 animate-in slide-in-from-right-full duration-300';
+                toast.innerHTML = `
+                    <span class="material-symbols-outlined text-[20px] text-primary-fixed">info</span>
+                    <span class="font-body-default">${message}</span>
+                `;
+                container.appendChild(toast);
+                setTimeout(() => {
+                    toast.classList.add('animate-out', 'fade-out', 'translate-x-full');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+    
+            // Dropdown interactions (visual only)
+            document.querySelectorAll('select').forEach(sel => {
+                sel.addEventListener('change', function() {
+                    showToast(`Filtering by: ${this.value}`);
+                });
+            });
+        </script>
+    </body></html>

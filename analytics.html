@@ -1,0 +1,492 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NexusDesk AI - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {error: "#ba1a1a", "secondary-container": "#a0f399", primary: "#004e9f", "primary-container": "#0066cc", "tertiary-fixed": "#ffdcbe", "bg-app": "#F5F5F5", background: "#fbf9f8", "on-error": "#ffffff", "text-tertiary": "#999999", "surface-container-highest": "#e4e2e1", "surface-container": "#f0eded", "on-secondary": "#ffffff", "inverse-primary": "#aac7ff", "on-tertiary-fixed": "#2c1600", secondary: "#1b6d24", "error-red": "#E60012", "on-primary-fixed": "#001b3e", "on-secondary-fixed": "#002204", "secondary-fixed": "#a3f69c", "surface-variant": "#e4e2e1", "on-primary-fixed-variant": "#00458e", "surface-container-high": "#eae8e7", "primary-fixed-dim": "#aac7ff", "secondary-fixed-dim": "#88d982", "on-secondary-container": "#217128", "on-tertiary-container": "#ffe4cd", "inverse-on-surface": "#f3f0f0", "tertiary-fixed-dim": "#ffb870", "on-tertiary-fixed-variant": "#693c00", "on-primary-container": "#dfe8ff", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "tertiary-container": "#995900", "ai-gold": "#FFC107", "surface-container-lowest": "#ffffff", outline: "#727784", "outline-variant": "#c1c6d5", "surface-dim": "#dcd9d9", "primary-fixed": "#d7e3ff", "on-secondary-fixed-variant": "#005312", "ai-gold-subtle": "#FFF9C4", tertiary: "#774400", "border-default": "#E0E0E0", "inverse-surface": "#303030", "text-secondary": "#666666", surface: "#fbf9f8", "on-surface-variant": "#414753", "surface-white": "#FFFFFF", "on-background": "#1b1c1c", "surface-bright": "#fbf9f8", "on-primary": "#ffffff", "surface-container-low": "#f6f3f2", "on-error-container": "#93000a", "surface-tint": "#005cba", "on-surface": "#1b1c1c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"sidebar-width": "240px", xl: "24px", xxl: "32px", "layout-gutter": "16px", sm: "8px", md: "12px", "layout-margin": "24px", lg: "16px", xs: "4px", base: "8px"}, fontFamily: {"body-default": ["Inter"], "body-sm": ["Inter"], "body-lg-mobile": ["Inter"], "code-data": ["jetbrainsMono"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "badge-cap": ["Inter"], "display-lg": ["Inter"], "label-bold": ["Inter"], "title-card": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"body-default": ["14px", {lineHeight: "22px", fontWeight: "400"}], "body-sm": ["12px", {lineHeight: "18px", fontWeight: "400"}], "body-lg-mobile": ["16px", {lineHeight: "24px", fontWeight: "400"}], "code-data": ["13px", {lineHeight: "20px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", letterSpacing: "-0.2px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.3px", fontWeight: "600"}], "badge-cap": ["11px", {lineHeight: "14px", fontWeight: "600"}], "display-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.5px", fontWeight: "700"}], "label-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "title-card": ["18px", {lineHeight: "24px", fontWeight: "600"}]}}}};</script>
+    <style>
+            body {
+                background-color: #F5F5F5;
+                color: #1b1c1c;
+                font-family: 'Inter', sans-serif;
+            }
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            .chart-container {
+                position: relative;
+                height: 200px;
+                width: 100%;
+            }
+            .glass-card {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            }
+        </style>
+    </head>
+    <body class="font-body-default text-body-default bg-bg-app">
+    <!-- SideNavBar Shell -->
+    <aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container border-r border-border-default z-[60] flex flex-col">
+    <div class="p-lg flex items-center gap-md">
+    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+    <span class="material-symbols-outlined">psychology</span>
+    </div>
+    <div>
+    <h2 class="font-headline-sm text-headline-sm font-black text-primary">Support Ops</h2>
+    <p class="font-label-bold text-[10px] text-text-secondary tracking-wider uppercase">Enterprise Tier</p>
+    </div>
+    </div>
+    <div class="px-sm mt-lg space-y-1 overflow-y-auto flex-1">
+    <a class="flex items-center gap-md px-md py-base bg-primary-container text-on-primary-container rounded-lg mx-2 transition-all active:scale-[0.98]" href="analytics.html">
+    <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+    <span class="font-label-bold text-label-bold">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-base text-text-secondary hover:bg-surface-container-highest transition-all rounded-lg mx-2 active:scale-[0.98]" href="dashboard.html">
+    <span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+    <span class="font-label-bold text-label-bold">Tickets</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-base text-text-secondary hover:bg-surface-container-highest transition-all rounded-lg mx-2 active:scale-[0.98]" href="roles.html">
+    <span class="material-symbols-outlined" data-icon="group">group</span>
+    <span class="font-label-bold text-label-bold">Customers</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-base text-text-secondary hover:bg-surface-container-highest transition-all rounded-lg mx-2 active:scale-[0.98]" href="dashboard_user.html">
+    <span class="material-symbols-outlined" data-icon="book">book</span>
+    <span class="font-label-bold text-label-bold">Knowledge Base</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-base text-text-secondary hover:bg-surface-container-highest transition-all rounded-lg mx-2 active:scale-[0.98]" href="analytics.html">
+    <span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+    <span class="font-label-bold text-label-bold">AI Insights</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-base text-text-secondary hover:bg-surface-container-highest transition-all rounded-lg mx-2 active:scale-[0.98]" href="configuration.html">
+    <span class="material-symbols-outlined" data-icon="diversity_3">diversity_3</span>
+    <span class="font-label-bold text-label-bold">Team</span>
+    </a>
+    </div>
+    <div class="px-sm mb-lg space-y-1">
+    <button class="w-full mb-lg py-md bg-primary text-on-primary font-bold rounded-lg shadow-sm active:scale-95 transition-all" onclick="window.location.href='create_ticket.html'">
+                    New Ticket
+                </button>
+    <a class="flex items-center gap-md px-md py-base text-text-secondary hover:bg-surface-container-highest transition-all rounded-lg mx-2" href="dashboard_user.html">
+    <span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+    <span class="font-label-bold text-label-bold">Help Center</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-base text-text-secondary hover:bg-surface-container-highest transition-all rounded-lg mx-2" href="login.html">
+    <span class="material-symbols-outlined" data-icon="logout">logout</span>
+    <span class="font-label-bold text-label-bold">Log Out</span>
+    </a>
+    </div>
+    </aside>
+    <!-- Content Area -->
+    <main class="ml-sidebar-width min-h-screen">
+    <!-- TopNavBar Shell -->
+    <header class="sticky top-0 z-50 flex items-center justify-between w-full px-layout-margin h-16 bg-surface-white shadow-sm">
+    <div class="flex items-center gap-xl w-1/3">
+    <div class="relative w-full max-w-xs">
+    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span>
+    <input class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-body-sm focus:ring-2 focus:ring-primary focus:bg-surface-white transition-all" placeholder="Search insights..." type="text">
+    </div>
+    </div>
+    <div class="flex items-center gap-lg">
+    <div class="flex items-center gap-md px-md">
+    <button class="p-xs text-text-secondary hover:bg-surface-container-low rounded-full transition-colors relative">
+    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+    <span class="absolute top-1 right-1 w-2 h-2 bg-error-red rounded-full"></span>
+    </button>
+    <button class="p-xs text-text-secondary hover:bg-surface-container-low rounded-full transition-colors">
+    <span class="material-symbols-outlined" data-icon="help">help</span>
+    </button>
+    <button class="p-xs text-text-secondary hover:bg-surface-container-low rounded-full transition-colors">
+    <span class="material-symbols-outlined" data-icon="settings">settings</span>
+    </button>
+    </div>
+    <div class="h-8 w-[1px] bg-border-default mx-sm"></div>
+    <div class="flex items-center gap-md cursor-pointer hover:bg-surface-container-low p-xs rounded-full transition-all">
+    <div class="text-right hidden sm:block">
+    <p class="font-label-bold text-label-bold text-on-surface leading-none">Sarah Jenkins</p>
+    <p class="text-[10px] text-text-secondary">System Admin</p>
+    </div>
+    <img alt="User profile" class="w-8 h-8 rounded-full border border-border-default" data-alt="A professional headshot of a female executive with a confident expression, set against a blurred modern office background with soft lighting. The image maintains a clean, corporate aesthetic with a neutral color palette that complements a professional SaaS interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApSgAkvVXwcryZE9Erospo6b0sycB9qBrClp_thhTLK6N5G-5jfTmJYruAi1_NvilqoaFIP-9rXLAptqjmbCWMWvz96F1TGW4JtCWGzgeJhDHJuGlqwk9-aUwL-TG0dHuPtygz7ZVpOk6cMc_o8PGKXTINbcc0frSgDPcgfzdM1cXBdDCVspfOGawKo37gVc288IvzP3mU7tJEQcV_ueA9LdAU4d6x6Y2vKw5qtKAKJOGAPnFnqjeO0HEoJz0mUOtjA_fJnjhz8Gin">
+    </div>
+    </div>
+    </header>
+    <!-- Page Canvas -->
+    <div class="p-layout-margin space-y-xl">
+    <!-- KPI Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+    <!-- Total Open Tickets -->
+    <div class="glass-card p-xl rounded-xl">
+    <div class="flex justify-between items-start mb-md">
+    <span class="text-text-secondary font-label-bold text-label-bold">Total Open Tickets</span>
+    <span class="material-symbols-outlined text-primary" data-icon="confirmation_number">confirmation_number</span>
+    </div>
+    <div class="flex items-baseline gap-sm">
+    <h3 class="font-display-lg text-display-lg text-on-surface">23</h3>
+    <span class="text-secondary font-label-bold text-body-sm flex items-center">
+    <span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+                                2.3%
+                            </span>
+    </div>
+    <p class="text-text-tertiary text-body-sm mt-xs">vs last 24h</p>
+    </div>
+    <!-- Avg Response Time -->
+    <div class="glass-card p-xl rounded-xl">
+    <div class="flex justify-between items-start mb-md">
+    <span class="text-text-secondary font-label-bold text-label-bold">Avg Response Time</span>
+    <span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+    </div>
+    <div class="flex items-baseline gap-sm">
+    <h3 class="font-display-lg text-display-lg text-on-surface">2.4h</h3>
+    <span class="text-secondary font-label-bold text-body-sm flex items-center">
+    <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+                                12%
+                            </span>
+    </div>
+    <p class="text-text-tertiary text-body-sm mt-xs">Under SLA target</p>
+    </div>
+    <!-- Closed This Month -->
+    <div class="glass-card p-xl rounded-xl">
+    <div class="flex justify-between items-start mb-md">
+    <span class="text-text-secondary font-label-bold text-label-bold">Closed This Month</span>
+    <span class="material-symbols-outlined text-primary" data-icon="task_alt">task_alt</span>
+    </div>
+    <div class="flex items-baseline gap-sm">
+    <h3 class="font-display-lg text-display-lg text-on-surface">156</h3>
+    </div>
+    <div class="w-full bg-surface-container h-1.5 rounded-full mt-md overflow-hidden">
+    <div class="bg-primary h-full w-[78%]"></div>
+    </div>
+    <p class="text-text-tertiary text-body-sm mt-xs">78% of monthly goal</p>
+    </div>
+    <!-- Team Satisfaction -->
+    <div class="glass-card p-xl rounded-xl bg-gradient-to-br from-white to-ai-gold-subtle/20 border-l-4 border-l-ai-gold">
+    <div class="flex justify-between items-start mb-md">
+    <span class="text-text-secondary font-label-bold text-label-bold">Team Satisfaction</span>
+    <span class="material-symbols-outlined text-ai-gold" data-icon="sentiment_very_satisfied" style="font-variation-settings: 'FILL' 1;">sentiment_very_satisfied</span>
+    </div>
+    <div class="flex items-baseline gap-sm">
+    <h3 class="font-display-lg text-display-lg text-on-surface">92%</h3>
+    <span class="px-2 py-0.5 bg-secondary-container text-secondary text-[10px] rounded font-bold">EXCELLENT</span>
+    </div>
+    <p class="text-text-tertiary text-body-sm mt-xs">Based on 48 internal surveys</p>
+    </div>
+    </section>
+    <!-- Charts Section (Bento Grid) -->
+    <section class="grid grid-cols-12 gap-lg">
+    <!-- Line Chart: Response Time Trend -->
+    <div class="col-span-12 lg:col-span-8 glass-card p-xl rounded-xl">
+    <div class="flex justify-between items-center mb-xl">
+    <h4 class="font-title-card text-title-card text-on-surface">Response Time Trend (30 Days)</h4>
+    <div class="flex items-center gap-md">
+    <div class="flex items-center gap-xs">
+    <span class="w-3 h-3 rounded-full bg-primary"></span>
+    <span class="text-[11px] text-text-secondary">Avg Time</span>
+    </div>
+    <div class="flex items-center gap-xs">
+    <span class="w-3 h-3 rounded-full bg-error"></span>
+    <span class="text-[11px] text-text-secondary">SLA Target</span>
+    </div>
+    </div>
+    </div>
+    <div class="chart-container h-[240px] flex items-end justify-between gap-2 px-md">
+    <!-- Simulated Line Chart with SVG -->
+    <svg class="absolute inset-0 w-full h-full p-4" preserveAspectRatio="none" viewBox="0 0 800 240">
+    <!-- SLA Target Line -->
+    <line stroke="#ba1a1a" stroke-dasharray="4" stroke-width="2" x1="0" x2="800" y1="180" y2="180"></line>
+    <!-- Response Time Line -->
+    <path d="M0,200 Q100,160 200,190 T400,140 T600,170 T800,120" fill="none" stroke="#004e9f" stroke-width="3"></path>
+    <!-- Gradient Area -->
+    <path d="M0,200 Q100,160 200,190 T400,140 T600,170 T800,120 V240 H0 Z" fill="url(#grad1)" opacity="0.1"></path>
+    <defs>
+    <linearGradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#004e9f;stop-opacity:1"></stop>
+    <stop offset="100%" style="stop-color:#004e9f;stop-opacity:0"></stop>
+    </linearGradient>
+    </defs>
+    </svg>
+    <div class="absolute bottom-0 left-0 w-full flex justify-between px-4 text-[10px] text-text-tertiary">
+    <span>May 01</span><span>May 10</span><span>May 20</span><span>May 30</span>
+    </div>
+    </div>
+    </div>
+    <!-- Pie Chart: Tickets by Status -->
+    <div class="col-span-12 lg:col-span-4 glass-card p-xl rounded-xl flex flex-col">
+    <h4 class="font-title-card text-title-card text-on-surface mb-xl">Tickets by Status</h4>
+    <div class="flex-1 flex items-center justify-center relative">
+    <!-- Simulated Donut Chart -->
+    <div class="w-40 h-40 rounded-full border-[12px] border-primary relative flex items-center justify-center">
+    <div class="absolute inset-[-12px] rounded-full border-[12px] border-surface-container" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%); border-color: #a0f399;"></div>
+    <div class="absolute inset-[-12px] rounded-full border-[12px] border-transparent" style="clip-path: polygon(50% 50%, 0% 50%, 0% 100%, 50% 100%); border-color: #FFC107;"></div>
+    <div class="text-center">
+    <span class="font-headline-md text-headline-md text-on-surface">179</span>
+    <p class="text-[10px] text-text-tertiary uppercase">Total</p>
+    </div>
+    </div>
+    </div>
+    <div class="grid grid-cols-2 gap-md mt-xl">
+    <div class="flex items-center gap-sm">
+    <span class="w-2 h-2 rounded-full bg-primary"></span>
+    <span class="text-body-sm text-text-secondary">Open (45%)</span>
+    </div>
+    <div class="flex items-center gap-sm">
+    <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+    <span class="text-body-sm text-text-secondary">Closed (35%)</span>
+    </div>
+    <div class="flex items-center gap-sm">
+    <span class="w-2 h-2 rounded-full bg-ai-gold"></span>
+    <span class="text-body-sm text-text-secondary">Pending (15%)</span>
+    </div>
+    <div class="flex items-center gap-sm">
+    <span class="w-2 h-2 rounded-full bg-error-red"></span>
+    <span class="text-body-sm text-text-secondary">Urgent (5%)</span>
+    </div>
+    </div>
+    </div>
+    <!-- Bar Chart: Tickets by Category -->
+    <div class="col-span-12 lg:col-span-5 glass-card p-xl rounded-xl">
+    <h4 class="font-title-card text-title-card text-on-surface mb-xl">Tickets by Category</h4>
+    <div class="space-y-lg">
+    <div class="space-y-xs">
+    <div class="flex justify-between text-body-sm">
+    <span class="text-text-secondary">Hardware</span>
+    <span class="font-bold">42</span>
+    </div>
+    <div class="w-full bg-surface-container h-2 rounded-full">
+    <div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+    </div>
+    </div>
+    <div class="space-y-xs">
+    <div class="flex justify-between text-body-sm">
+    <span class="text-text-secondary">Software</span>
+    <span class="font-bold">38</span>
+    </div>
+    <div class="w-full bg-surface-container h-2 rounded-full">
+    <div class="bg-primary h-full rounded-full" style="width: 76%"></div>
+    </div>
+    </div>
+    <div class="space-y-xs">
+    <div class="flex justify-between text-body-sm">
+    <span class="text-text-secondary">Network</span>
+    <span class="font-bold">21</span>
+    </div>
+    <div class="w-full bg-surface-container h-2 rounded-full">
+    <div class="bg-primary h-full rounded-full" style="width: 42%"></div>
+    </div>
+    </div>
+    <div class="space-y-xs">
+    <div class="flex justify-between text-body-sm">
+    <span class="text-text-secondary">Access/Security</span>
+    <span class="font-bold">12</span>
+    </div>
+    <div class="w-full bg-surface-container h-2 rounded-full">
+    <div class="bg-primary h-full rounded-full" style="width: 24%"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Table: Agent Performance -->
+    <div class="col-span-12 lg:col-span-7 glass-card overflow-hidden rounded-xl">
+    <div class="p-xl border-b border-border-default flex justify-between items-center">
+    <h4 class="font-title-card text-title-card text-on-surface">Agent Performance</h4>
+    <button class="text-primary font-label-bold text-label-bold hover:underline">View All</button>
+    </div>
+    <div class="overflow-x-auto">
+    <table class="w-full text-left">
+    <thead class="bg-surface-container text-text-secondary font-label-bold text-[11px] uppercase tracking-wider">
+    <tr>
+    <th class="px-xl py-md">Agent</th>
+    <th class="px-xl py-md">Resolved</th>
+    <th class="px-xl py-md">Avg Time</th>
+    <th class="px-xl py-md">Rating</th>
+    </tr>
+    </thead>
+    <tbody class="divide-y divide-border-default">
+    <tr class="hover:bg-surface-container-low transition-colors">
+    <td class="px-xl py-md flex items-center gap-md">
+    <img alt="Agent" class="w-8 h-8 rounded-full" data-alt="A close-up portrait of a professional male support agent with glasses, smiling warmly. The photo is high-quality with clear focus, emphasizing a friendly and approachable personality, consistent with a high-trust enterprise dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATi_RYGwOl1zrqd8SI8U8g_GRN-Vcgzr6DU2M9cBFXRHEay9Vm1PlcQc9NOWTOTEF4jNx--VFg8oG8a3RH4T7oD4y0UCJmTbuka7yVdy6cFy71uO7CpG2TLJeexaP-FZ1It27iUII9XIcPBzJuZZmbrRxmwo54zqWCL0irun_WL1iogbXH8HlsZmkpFIeUlFVCiWNSme1n8SWSCWDd00OOMLegs09xbiULCGRtdWFCtnIHl_u2OPkt0Oj4r_hzwP8-SPWFKO38r8rU">
+    <span class="font-label-bold">Alex Rivera</span>
+    </td>
+    <td class="px-xl py-md font-body-sm">48</td>
+    <td class="px-xl py-md font-body-sm">1.8h</td>
+    <td class="px-xl py-md">
+    <div class="flex text-ai-gold">
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]">star_half</span>
+    </div>
+    </td>
+    </tr>
+    <tr class="hover:bg-surface-container-low transition-colors">
+    <td class="px-xl py-md flex items-center gap-md">
+    <img alt="Agent" class="w-8 h-8 rounded-full" data-alt="A professional headshot of a female support lead with a polished, knowledgeable appearance. Soft studio lighting provides a bright, modern look that matches a light-mode enterprise UI, conveying expertise and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ46YtWGl5xpS9V6eK-CPRvpIAEi26VTPbVUuSqXnBi7qboVmFP0VhnBhf3VTnbF6yXPbF4fQdRekvjpjp65ZifbMjVRbHtVdZ9yrlhVZCH3cqoECdQy8_WxI9QKwvmrK1AXMysPaB4t3pehTQKODLGkUKQkohTIX3Xt9pM5ECayp9puACxEWbRoLdkVx1xXnLjk_LdqrbwLq8ab2IjLhaQL1E7wBzHAchdFFUYcDRzBs6CtL7cn4B3239dR9htRGPUamU6sjJ4aGo">
+    <span class="font-label-bold">Mila Kunis</span>
+    </td>
+    <td class="px-xl py-md font-body-sm">42</td>
+    <td class="px-xl py-md font-body-sm">2.1h</td>
+    <td class="px-xl py-md">
+    <div class="flex text-ai-gold">
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    </div>
+    </td>
+    </tr>
+    <tr class="hover:bg-surface-container-low transition-colors">
+    <td class="px-xl py-md flex items-center gap-md">
+    <img alt="Agent" class="w-8 h-8 rounded-full" data-alt="A high-resolution corporate headshot of a male IT technician, looking direct into the camera with a calm and helpful expression. Minimalist background and clean lighting highlight the professional quality of the user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhzgzbdgEfZBKff9dEtop-hfqGW1mRlzVvS04NzUcLOgwyyZfbxlMkTd8qXKWeWIPKtivIbI4XYeWF1AySPcjlxynUoMEhYj-KAaBrbeGcIgS0RLw0hnrebJw7culmybFaWQ1qWb4M5tQygCtP-_H6ku94-QvfIu16t6XHmsTftJmFvuVYWRET4mgunGTFfugqFEOZRrHTrt-8hx_zeIs2H2JNdwutiHbZL38Dvw42ziY0uKGpDYNQ40VZwHwu6b6rBOvD01YiCEZV">
+    <span class="font-label-bold">James Wilson</span>
+    </td>
+    <td class="px-xl py-md font-body-sm">31</td>
+    <td class="px-xl py-md font-body-sm">3.4h</td>
+    <td class="px-xl py-md">
+    <div class="flex text-ai-gold">
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+    <span class="material-symbols-outlined text-[16px]">star</span>
+    <span class="material-symbols-outlined text-[16px]">star</span>
+    </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </section>
+    <!-- Bottom Section: User Management Preview -->
+    <section class="glass-card rounded-xl overflow-hidden mb-xxl">
+    <div class="p-xl border-b border-border-default flex justify-between items-center">
+    <div>
+    <h4 class="font-title-card text-title-card text-on-surface">Recent User Management</h4>
+    <p class="text-body-sm text-text-tertiary">Monitor new user activations and activity logs.</p>
+    </div>
+    <div class="flex gap-md">
+    <button class="px-md py-base border border-border-default rounded-lg hover:bg-surface-container-low transition-all font-label-bold text-label-bold">Export Logs</button>
+    <button class="px-md py-base bg-primary text-on-primary rounded-lg hover:opacity-90 transition-all font-label-bold text-label-bold" onclick="window.location.href='roles.html'">Manage All Users</button>
+    </div>
+    </div>
+    <div class="overflow-x-auto">
+    <table class="w-full text-left">
+    <thead class="bg-surface-container text-text-secondary font-label-bold text-[11px] uppercase tracking-wider">
+    <tr>
+    <th class="px-xl py-md">User Identity</th>
+    <th class="px-xl py-md">Role</th>
+    <th class="px-xl py-md">Last Active</th>
+    <th class="px-xl py-md">Account Status</th>
+    <th class="px-xl py-md">Actions</th>
+    </tr>
+    </thead>
+    <tbody class="divide-y divide-border-default">
+    <tr class="hover:bg-surface-container-low transition-colors">
+    <td class="px-xl py-md">
+    <div class="flex items-center gap-md">
+    <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs">EL</div>
+    <div>
+    <p class="font-label-bold text-on-surface">Emma Lawrence</p>
+    <p class="text-[11px] text-text-tertiary">emma.l@enterprise.com</p>
+    </div>
+    </div>
+    </td>
+    <td class="px-xl py-md">
+    <span class="px-2 py-1 bg-surface-container-highest text-text-secondary rounded text-[10px] font-bold">Standard User</span>
+    </td>
+    <td class="px-xl py-md text-body-sm">2 mins ago</td>
+    <td class="px-xl py-md">
+    <div class="flex items-center gap-xs">
+    <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+    <span class="text-body-sm text-secondary">Active</span>
+    </div>
+    </td>
+    <td class="px-xl py-md">
+    <button class="p-xs text-text-secondary hover:text-primary transition-colors">
+    <span class="material-symbols-outlined text-[20px]">more_vert</span>
+    </button>
+    </td>
+    </tr>
+    <tr class="hover:bg-surface-container-low transition-colors">
+    <td class="px-xl py-md">
+    <div class="flex items-center gap-md">
+    <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">RK</div>
+    <div>
+    <p class="font-label-bold text-on-surface">Robert Kincaid</p>
+    <p class="text-[11px] text-text-tertiary">r.kincaid@enterprise.com</p>
+    </div>
+    </div>
+    </td>
+    <td class="px-xl py-md">
+    <span class="px-2 py-1 bg-primary-container text-on-primary-container rounded text-[10px] font-bold">Billing Admin</span>
+    </td>
+    <td class="px-xl py-md text-body-sm">1 hour ago</td>
+    <td class="px-xl py-md">
+    <div class="flex items-center gap-xs">
+    <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+    <span class="text-body-sm text-secondary">Active</span>
+    </div>
+    </td>
+    <td class="px-xl py-md">
+    <button class="p-xs text-text-secondary hover:text-primary transition-colors">
+    <span class="material-symbols-outlined text-[20px]">more_vert</span>
+    </button>
+    </td>
+    </tr>
+    <tr class="hover:bg-surface-container-low transition-colors">
+    <td class="px-xl py-md">
+    <div class="flex items-center gap-md">
+    <div class="w-8 h-8 rounded-full bg-surface-container-highest text-text-secondary flex items-center justify-center font-bold text-xs">TH</div>
+    <div>
+    <p class="font-label-bold text-on-surface">Thomas Hiddleston</p>
+    <p class="text-[11px] text-text-tertiary">t.hiddles@enterprise.com</p>
+    </div>
+    </div>
+    </td>
+    <td class="px-xl py-md">
+    <span class="px-2 py-1 bg-surface-container-highest text-text-secondary rounded text-[10px] font-bold">External Dev</span>
+    </td>
+    <td class="px-xl py-md text-body-sm">6 hours ago</td>
+    <td class="px-xl py-md">
+    <div class="flex items-center gap-xs">
+    <span class="w-1.5 h-1.5 rounded-full bg-error-red"></span>
+    <span class="text-body-sm text-error-red">Suspended</span>
+    </div>
+    </td>
+    <td class="px-xl py-md">
+    <button class="p-xs text-text-secondary hover:text-primary transition-colors">
+    <span class="material-symbols-outlined text-[20px]">more_vert</span>
+    </button>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </section>
+    </div>
+    </main>
+    <!-- FAB for New Ticket - Contextual Placement -->
+    <button class="fixed bottom-xl right-xl w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-[100]" onclick="window.location.href='create_ticket.html'">
+    <span class="material-symbols-outlined text-[24px]">add</span>
+    </button>
+    <script src="shared-sidebar.js"></script>
+    <script>
+            // Subtle micro-interactions
+            document.querySelectorAll('.glass-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-2px)';
+                    card.style.transition = 'transform 0.2s ease-out';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+    
+            // Initialize any tooltips or interactive charts if necessary
+            // Purely visual for this prototype
+        </script>
+    </body></html>

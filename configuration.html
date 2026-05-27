@@ -1,0 +1,340 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NexusDesk AI - Roles &amp; Permissions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <style>
+            body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; }
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                vertical-align: middle;
+            }
+            .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+            .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+            .custom-scrollbar::-webkit-scrollbar-thumb { background: #E0E0E0; border-radius: 10px; }
+            .permission-row:hover { background-color: #F9F9F9; }
+            .ai-border { border-left: 2px solid #FFC107; }
+        </style>
+    <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-fixed": "#d7e3ff", secondary: "#1b6d24", outline: "#727784", "on-secondary-fixed": "#002204", "surface-tint": "#005cba", "secondary-fixed": "#a3f69c", "on-tertiary": "#ffffff", tertiary: "#774400", "surface-variant": "#e4e2e1", "error-container": "#ffdad6", "tertiary-container": "#995900", "primary-container": "#0066cc", "surface-container-low": "#f6f3f2", "surface-bright": "#fbf9f8", "on-tertiary-fixed-variant": "#693c00", "inverse-on-surface": "#f3f0f0", "bg-app": "#F5F5F5", "ai-gold": "#FFC107", "on-error-container": "#93000a", "on-primary-fixed-variant": "#00458e", "on-primary": "#ffffff", "ai-gold-subtle": "#FFF9C4", background: "#fbf9f8", "text-secondary": "#666666", "text-tertiary": "#999999", "on-secondary": "#ffffff", "tertiary-fixed": "#ffdcbe", "on-tertiary-fixed": "#2c1600", "surface-dim": "#dcd9d9", "secondary-container": "#a0f399", surface: "#fbf9f8", "border-default": "#E0E0E0", "surface-container-highest": "#e4e2e1", "on-tertiary-container": "#ffe4cd", "inverse-surface": "#303030", error: "#ba1a1a", "surface-container-high": "#eae8e7", "on-primary-fixed": "#001b3e", "outline-variant": "#c1c6d5", "inverse-primary": "#aac7ff", primary: "#004e9f", "surface-container": "#f0eded", "surface-white": "#FFFFFF", "on-surface": "#1b1c1c", "secondary-fixed-dim": "#88d982", "on-background": "#1b1c1c", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aac7ff", "on-secondary-container": "#217128", "on-primary-container": "#dfe8ff", "on-surface-variant": "#414753", "on-error": "#ffffff", "on-secondary-fixed-variant": "#005312", "tertiary-fixed-dim": "#ffb870"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {sm: "8px", base: "8px", xs: "4px", "layout-gutter": "16px", "sidebar-width": "240px", xl: "24px", "layout-margin": "24px", xxl: "32px", md: "12px", lg: "16px"}, fontFamily: {"headline-sm": ["Inter"], "title-card": ["Inter"], "label-bold": ["Inter"], "body-default": ["Inter"], "headline-md": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-sm": ["20px", {lineHeight: "28px", letterSpacing: "-0.2px", fontWeight: "600"}], "title-card": ["18px", {lineHeight: "24px", fontWeight: "600"}], "label-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.3px", fontWeight: "600"}], "body-default": ["14px", {lineHeight: "22px", fontWeight: "400"}]}}}};</script>
+    </head>
+    <body class="bg-bg-app text-on-surface">
+    <!-- Sidebar Navigation -->
+    <aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container border-r border-border-default z-50 flex flex-col">
+    <div class="p-lg flex items-center gap-sm">
+    <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+    <span class="material-symbols-outlined text-white text-lg">psychology</span>
+    </div>
+    <div>
+    <h2 class="font-headline-sm text-headline-sm font-black text-primary">Support Ops</h2>
+    <p class="text-[10px] text-text-secondary uppercase tracking-wider font-bold">Enterprise Tier</p>
+    </div>
+    </div>
+    <nav class="flex-1 px-base mt-base space-y-xs overflow-y-auto custom-scrollbar">
+    <a class="flex items-center gap-md px-md py-sm text-text-secondary hover:bg-surface-container-highest rounded-lg transition-all" href="analytics.html">
+    <span class="material-symbols-outlined">dashboard</span>
+    <span class="font-label-bold text-label-bold">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm text-text-secondary hover:bg-surface-container-highest rounded-lg transition-all" href="dashboard.html">
+    <span class="material-symbols-outlined">confirmation_number</span>
+    <span class="font-label-bold text-label-bold">Tickets</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm text-text-secondary hover:bg-surface-container-highest rounded-lg transition-all" href="roles.html">
+    <span class="material-symbols-outlined">group</span>
+    <span class="font-label-bold text-label-bold">Customers</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm text-text-secondary hover:bg-surface-container-highest rounded-lg transition-all" href="dashboard_user.html">
+    <span class="material-symbols-outlined">book</span>
+    <span class="font-label-bold text-label-bold">Knowledge Base</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm text-text-secondary hover:bg-surface-container-highest rounded-lg transition-all" href="analytics.html">
+    <span class="material-symbols-outlined">psychology</span>
+    <span class="font-label-bold text-label-bold">AI Insights</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container rounded-lg mx-0" href="configuration.html">
+    <span class="material-symbols-outlined">diversity_3</span>
+    <span class="font-label-bold text-label-bold">Team</span>
+    </a>
+    </nav>
+    <div class="mt-auto p-base border-t border-border-default space-y-xs">
+    <a class="flex items-center gap-md px-md py-sm text-text-secondary hover:bg-surface-container-highest rounded-lg transition-all" href="dashboard_user.html">
+    <span class="material-symbols-outlined">contact_support</span>
+    <span class="font-label-bold text-label-bold">Help Center</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm text-text-secondary hover:bg-surface-container-highest rounded-lg transition-all" href="login.html">
+    <span class="material-symbols-outlined">logout</span>
+    <span class="font-label-bold text-label-bold">Log Out</span>
+    </a>
+    </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="ml-sidebar-width min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-surface-white shadow-sm h-16 flex items-center justify-between px-layout-margin">
+    <div class="flex items-center gap-lg flex-1">
+    <h1 class="font-headline-md text-headline-md font-bold text-primary">NexusDesk AI</h1>
+    <div class="relative max-w-md w-full">
+    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-tertiary">search</span>
+    <input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-body-default focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search team members or roles..." type="text">
+    </div>
+    </div>
+    <div class="flex items-center gap-md">
+    <button class="p-sm text-text-secondary hover:bg-surface-container-low rounded-full transition-all">
+    <span class="material-symbols-outlined">notifications</span>
+    </button>
+    <button class="p-sm text-text-secondary hover:bg-surface-container-low rounded-full transition-all">
+    <span class="material-symbols-outlined">help</span>
+    </button>
+    <button class="p-sm text-text-secondary hover:bg-surface-container-low rounded-full transition-all">
+    <span class="material-symbols-outlined">settings</span>
+    </button>
+    <div class="h-8 w-8 rounded-full overflow-hidden border border-border-default">
+    <img alt="User profile" data-alt="Close-up professional portrait of a tech executive in a minimalist studio. High-key lighting highlights the sharp features and clean white background, conveying a high-trust, modern enterprise aesthetic. The color palette is monochromatic with subtle warm skin tones, ensuring visual harmony with a professional software interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2oS2jsGetWjMT0Fw4PNxebZI_Dj3caSrh3ZJEYzZXYpmJlRaDaIobKSUNRzaInGveXswOsW2j7-SDkuJcgfuSGvk0ZkwGuZOWzpl_nt1THGnd0-oUHPHNxpQWlq5nEfjdSuF6x29iCBAosUKYcfMp9WP7T7eGp5MyF0dQ4wxbOiVq2fwqSQd9tniM6nADLKYLYvdJKFX2LQ72leSNTLFs9xsZF6hqGjcjLu8kRq3Fa3-wcgA7ZyQTkStPNlmaqfKSN_n2ApzEPKCT">
+    </div>
+    </div>
+    </header>
+    <!-- Page Content -->
+    <div class="flex-1 p-layout-margin">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-xxl">
+    <div>
+    <h2 class="font-display-lg text-display-lg text-on-surface">Roles &amp; Permissions</h2>
+    <p class="text-text-secondary font-body-default mt-xs">Define granular access levels and functional permissions for system roles.</p>
+    </div>
+    <button class="inline-flex items-center gap-xs px-xl py-md bg-primary-container text-white rounded-lg font-label-bold hover:opacity-90 active:scale-95 transition-all shadow-sm">
+    <span class="material-symbols-outlined text-base">add</span>
+                        Create New Role
+                    </button>
+    </div>
+    <!-- Management Interface -->
+    <div class="grid grid-cols-12 gap-xl items-start">
+    <!-- Roles List (Left) -->
+    <div class="col-span-12 lg:col-span-4 space-y-base">
+    <div class="bg-surface-white rounded-xl shadow-sm border border-border-default overflow-hidden">
+    <div class="p-lg border-b border-border-default bg-surface-container-low">
+    <h3 class="font-title-card text-title-card text-on-surface">System Roles</h3>
+    </div>
+    <div class="divide-y divide-border-default">
+    <!-- Administrator Role -->
+    <div class="p-lg hover:bg-surface-container-low cursor-pointer transition-colors group">
+    <div class="flex items-start justify-between">
+    <div class="flex gap-md">
+    <span class="material-symbols-outlined text-primary mt-1">shield_person</span>
+    <div>
+    <p class="font-label-bold text-on-surface">Administrator</p>
+    <p class="text-body-sm text-text-tertiary">Full system access</p>
+    </div>
+    </div>
+    <span class="bg-primary-fixed text-on-primary-fixed px-base py-xs rounded-full font-badge-cap text-badge-cap">2 Users</span>
+    </div>
+    </div>
+    <!-- Support Agent Role (Active) -->
+    <div class="p-lg bg-surface-container-highest border-l-4 border-primary cursor-pointer">
+    <div class="flex items-start justify-between">
+    <div class="flex gap-md">
+    <span class="material-symbols-outlined text-primary mt-1">support_agent</span>
+    <div>
+    <p class="font-label-bold text-primary">Support Agent</p>
+    <p class="text-body-sm text-text-secondary">Handling customer issues</p>
+    </div>
+    </div>
+    <span class="bg-secondary-container text-on-secondary-container px-base py-xs rounded-full font-badge-cap text-badge-cap">14 Users</span>
+    </div>
+    </div>
+    <!-- End User Role -->
+    <div class="p-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+    <div class="flex items-start justify-between">
+    <div class="flex gap-md">
+    <span class="material-symbols-outlined text-text-secondary mt-1">person</span>
+    <div>
+    <p class="font-label-bold text-on-surface">End User</p>
+    <p class="text-body-sm text-text-tertiary">Customer portal access</p>
+    </div>
+    </div>
+    <span class="bg-surface-container text-text-secondary px-base py-xs rounded-full font-badge-cap text-badge-cap">1,240 Users</span>
+    </div>
+    </div>
+    <!-- Billing Admin Role -->
+    <div class="p-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+    <div class="flex items-start justify-between">
+    <div class="flex gap-md">
+    <span class="material-symbols-outlined text-text-secondary mt-1">payments</span>
+    <div>
+    <p class="font-label-bold text-on-surface">Billing Admin</p>
+    <p class="text-body-sm text-text-tertiary">Finance and invoicing</p>
+    </div>
+    </div>
+    <span class="bg-surface-container text-text-secondary px-base py-xs rounded-full font-badge-cap text-badge-cap">3 Users</span>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Info Card -->
+    <div class="bg-primary-fixed/30 p-lg rounded-xl border border-primary/10">
+    <div class="flex items-start gap-md">
+    <span class="material-symbols-outlined text-primary">info</span>
+    <div class="text-body-sm text-on-primary-fixed-variant">
+    <p class="font-bold mb-1">Inherited Permissions</p>
+    <p>Support Agents inherit basic viewer permissions from the 'End User' role. Changes here only affect Support Agent specific overrides.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Role Details (Right) -->
+    <div class="col-span-12 lg:col-span-8 space-y-base">
+    <div class="bg-surface-white rounded-xl shadow-sm border border-border-default overflow-hidden">
+    <!-- Detail Header -->
+    <div class="p-xl border-b border-border-default flex items-center justify-between">
+    <div>
+    <div class="flex items-center gap-base">
+    <h3 class="font-headline-sm text-headline-sm">Support Agent Permissions</h3>
+    <span class="bg-outline-variant/30 text-on-surface-variant px-base py-1 rounded text-xs font-bold uppercase tracking-tight">System Default</span>
+    </div>
+    <p class="text-body-default text-text-secondary mt-1">Configure actions available for the Support Agent role across modules.</p>
+    </div>
+    <div class="flex gap-sm">
+    <button class="px-lg py-sm border border-border-default rounded-lg font-label-bold text-text-secondary hover:bg-surface-container-low transition-all">Cancel</button>
+    <button class="px-lg py-sm bg-primary text-white rounded-lg font-label-bold hover:bg-primary/90 transition-all shadow-md">Save Changes</button>
+    </div>
+    </div>
+    <!-- Permission Matrix -->
+    <div class="divide-y divide-border-default">
+    <!-- Module: Tickets -->
+    <div class="p-xl">
+    <div class="flex items-center gap-sm mb-lg">
+    <span class="material-symbols-outlined text-primary">confirmation_number</span>
+    <h4 class="font-title-card text-title-card uppercase text-xs tracking-widest text-text-tertiary">Tickets Module</h4>
+    </div>
+    <div class="space-y-1">
+    <div class="flex items-center justify-between p-md rounded-lg permission-row transition-all">
+    <div>
+    <p class="font-label-bold text-on-surface">View Tickets</p>
+    <p class="text-body-sm text-text-tertiary">Read access to ticket lists and details</p>
+    </div>
+    <input checked="" class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-primary before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    <div class="flex items-center justify-between p-md rounded-lg permission-row transition-all">
+    <div>
+    <p class="font-label-bold text-on-surface">Respond to Tickets</p>
+    <p class="text-body-sm text-text-tertiary">Create public and internal replies</p>
+    </div>
+    <input checked="" class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-primary before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    <div class="flex items-center justify-between p-md rounded-lg permission-row transition-all opacity-50">
+    <div>
+    <p class="font-label-bold text-on-surface">Delete Tickets</p>
+    <p class="text-body-sm text-text-tertiary">Permanently remove records from database</p>
+    </div>
+    <input class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-primary before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    </div>
+    </div>
+    <!-- Module: AI Capabilities -->
+    <div class="p-xl ai-border bg-ai-gold-subtle/20">
+    <div class="flex items-center justify-between mb-lg">
+    <div class="flex items-center gap-sm">
+    <span class="material-symbols-outlined text-ai-gold" data-weight="fill">psychology</span>
+    <h4 class="font-title-card text-title-card uppercase text-xs tracking-widest text-ai-gold font-black">AI Capabilities</h4>
+    </div>
+    <span class="text-[10px] font-black text-ai-gold uppercase px-base py-1 bg-white border border-ai-gold rounded-full">Intelligent Features</span>
+    </div>
+    <div class="space-y-1">
+    <div class="flex items-center justify-between p-md rounded-lg hover:bg-white/50 transition-all">
+    <div>
+    <p class="font-label-bold text-on-surface">View AI Suggestions</p>
+    <p class="text-body-sm text-text-tertiary">Enable automated response drafts and tags</p>
+    </div>
+    <input checked="" class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-ai-gold before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    <div class="flex items-center justify-between p-md rounded-lg hover:bg-white/50 transition-all">
+    <div>
+    <p class="font-label-bold text-on-surface">Accept/Reject AI Classification</p>
+    <p class="text-body-sm text-text-tertiary">Allow agents to correct AI sentiment and categorization</p>
+    </div>
+    <input checked="" class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-ai-gold before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    <div class="flex items-center justify-between p-md rounded-lg hover:bg-white/50 transition-all">
+    <div>
+    <p class="font-label-bold text-on-surface">Generate AI Insights</p>
+    <p class="text-body-sm text-text-tertiary">Allow agents to trigger deep-dive report summaries</p>
+    </div>
+    <input class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-ai-gold before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    </div>
+    </div>
+    <!-- Module: Analytics -->
+    <div class="p-xl">
+    <div class="flex items-center gap-sm mb-lg">
+    <span class="material-symbols-outlined text-primary">analytics</span>
+    <h4 class="font-title-card text-title-card uppercase text-xs tracking-widest text-text-tertiary">Analytics &amp; Reports</h4>
+    </div>
+    <div class="space-y-1">
+    <div class="flex items-center justify-between p-md rounded-lg permission-row transition-all">
+    <div>
+    <p class="font-label-bold text-on-surface">View Personal Dashboards</p>
+    <p class="text-body-sm text-text-tertiary">Access to individual performance metrics</p>
+    </div>
+    <input checked="" class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-primary before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    <div class="flex items-center justify-between p-md rounded-lg permission-row transition-all opacity-50">
+    <div>
+    <p class="font-label-bold text-on-surface">Export Data</p>
+    <p class="text-body-sm text-text-tertiary">Download reports in CSV or Excel format</p>
+    </div>
+    <input class="w-10 h-5 appearance-none bg-border-default rounded-full relative cursor-pointer outline-none transition-all duration-200 checked:bg-primary before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:bg-white before:rounded-full before:transition-all before:duration-200 checked:before:translate-x-5" type="checkbox">
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Footer Actions -->
+    <div class="p-xl bg-surface-container-low border-t border-border-default flex items-center justify-between">
+    <button class="flex items-center gap-xs text-error font-label-bold hover:underline transition-all">
+    <span class="material-symbols-outlined text-base">restart_alt</span>
+                                    Reset to Defaults
+                                </button>
+    <div class="flex gap-md">
+    <button class="px-xl py-md bg-surface-white border border-border-default rounded-lg font-label-bold text-text-secondary hover:bg-surface-container-high transition-all">Discard Changes</button>
+    <button class="px-xl py-md bg-primary text-white rounded-lg font-label-bold hover:shadow-lg active:scale-95 transition-all">Save Changes</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </main>
+    <!-- FAB for Contextual Help (Standard UI Pattern for Support Ops) -->
+    <button class="fixed bottom-xl right-xl w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-50">
+    <span class="material-symbols-outlined">question_mark</span>
+    </button>
+    <script src="shared-sidebar.js"></script>
+    <script>
+            // Micro-interactions for toggles and interactive elements
+            document.querySelectorAll('input[type="checkbox"]').forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    const parentRow = this.closest('.permission-row') || this.closest('.p-md');
+                    if (this.checked) {
+                        parentRow.classList.add('bg-primary-fixed/10');
+                    } else {
+                        parentRow.classList.remove('bg-primary-fixed/10');
+                    }
+                });
+            });
+    
+            // Simulating active state change for role list
+            document.querySelectorAll('.lg\\:col-span-4 .divide-y > div').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.lg\\:col-span-4 .divide-y > div').forEach(i => {
+                        i.classList.remove('bg-surface-container-highest', 'border-l-4', 'border-primary');
+                        i.classList.add('hover:bg-surface-container-low');
+                        const text = i.querySelector('.font-label-bold');
+                        if(text) text.classList.remove('text-primary');
+                    });
+                    this.classList.remove('hover:bg-surface-container-low');
+                    this.classList.add('bg-surface-container-highest', 'border-l-4', 'border-primary');
+                    this.querySelector('.font-label-bold').classList.add('text-primary');
+                });
+            });
+        </script>
+    </body></html>

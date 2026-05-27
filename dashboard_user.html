@@ -1,0 +1,273 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NexusDesk AI - User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <style>
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: #F5F5F5;
+            }
+            .ticket-card:hover {
+                box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+                transform: translateY(-2px);
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 6px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #E0E0E0;
+                border-radius: 10px;
+            }
+        </style>
+    <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {error: "#ba1a1a", "secondary-container": "#a0f399", primary: "#004e9f", "primary-container": "#0066cc", "tertiary-fixed": "#ffdcbe", "bg-app": "#F5F5F5", background: "#fbf9f8", "on-error": "#ffffff", "text-tertiary": "#999999", "surface-container-highest": "#e4e2e1", "surface-container": "#f0eded", "on-secondary": "#ffffff", "inverse-primary": "#aac7ff", "on-tertiary-fixed": "#2c1600", secondary: "#1b6d24", "error-red": "#E60012", "on-primary-fixed": "#001b3e", "on-secondary-fixed": "#002204", "secondary-fixed": "#a3f69c", "surface-variant": "#e4e2e1", "on-primary-fixed-variant": "#00458e", "surface-container-high": "#eae8e7", "primary-fixed-dim": "#aac7ff", "secondary-fixed-dim": "#88d982", "on-secondary-container": "#217128", "on-tertiary-container": "#ffe4cd", "inverse-on-surface": "#f3f0f0", "tertiary-fixed-dim": "#ffb870", "on-tertiary-fixed-variant": "#693c00", "on-primary-container": "#dfe8ff", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "tertiary-container": "#995900", "ai-gold": "#FFC107", "surface-container-lowest": "#ffffff", outline: "#727784", "outline-variant": "#c1c6d5", "surface-dim": "#dcd9d9", "primary-fixed": "#d7e3ff", "on-secondary-fixed-variant": "#005312", "ai-gold-subtle": "#FFF9C4", tertiary: "#774400", "border-default": "#E0E0E0", "inverse-surface": "#303030", "text-secondary": "#666666", surface: "#fbf9f8", "on-surface-variant": "#414753", "surface-white": "#FFFFFF", "on-background": "#1b1c1c", "surface-bright": "#fbf9f8", "on-primary": "#ffffff", "surface-container-low": "#f6f3f2", "on-error-container": "#93000a", "surface-tint": "#005cba", "on-surface": "#1b1c1c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"sidebar-width": "240px", xl: "24px", xxl: "32px", "layout-gutter": "16px", sm: "8px", md: "12px", "layout-margin": "24px", lg: "16px", xs: "4px", base: "8px"}, fontFamily: {"body-default": ["Inter"], "body-sm": ["Inter"], "body-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "label-bold": ["Inter"], "title-card": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"body-default": ["14px", {lineHeight: "22px", fontWeight: "400"}], "body-sm": ["12px", {lineHeight: "18px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", letterSpacing: "-0.2px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.3px", fontWeight: "600"}], "label-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "title-card": ["18px", {lineHeight: "24px", fontWeight: "600"}]}}}};</script>
+    </head>
+    <body class="bg-bg-app text-on-surface">
+    <!-- TopNavBar -->
+    <nav class="sticky top-0 z-50 flex items-center justify-between w-full px-layout-margin h-16 bg-surface-white dark:bg-inverse-surface shadow-sm transition-all duration-200">
+    <div class="flex items-center gap-8">
+    <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-default">NexusDesk AI</span>
+    <div class="hidden md:flex items-center gap-6">
+    <a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary py-5" href="dashboard_user.html">Tickets</a>
+    <a class="text-text-secondary dark:text-on-surface-variant font-medium hover:bg-surface-container-low dark:hover:bg-surface-container-highest px-3 py-2 rounded-lg transition-colors duration-200" href="dashboard_user.html">Knowledge Base</a>
+    <a class="text-text-secondary dark:text-on-surface-variant font-medium hover:bg-surface-container-low dark:hover:bg-surface-container-highest px-3 py-2 rounded-lg transition-colors duration-200" href="dashboard_user.html">Community</a>
+    </div>
+    </div>
+    <div class="flex items-center gap-4">
+    <div class="relative hidden sm:block">
+    <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-text-secondary" data-icon="search">search</span>
+    <input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-lg text-body-sm font-body-sm w-64 focus:ring-2 focus:ring-primary" placeholder="Search tickets..." type="text">
+    </div>
+    <div class="flex items-center gap-2">
+    <button class="p-2 text-text-secondary hover:bg-surface-container-low rounded-full transition-all active:scale-95">
+    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:bg-surface-container-low rounded-full transition-all active:scale-95">
+    <span class="material-symbols-outlined" data-icon="help">help</span>
+    </button>
+    <button class="p-2 text-text-secondary hover:bg-surface-container-low rounded-full transition-all active:scale-95">
+    <span class="material-symbols-outlined" data-icon="settings">settings</span>
+    </button>
+    </div>
+    <div class="h-8 w-8 rounded-full overflow-hidden border border-border-default cursor-pointer active:scale-95 transition-all">
+    <img alt="User profile" class="h-full w-full object-cover" data-alt="A professional close-up portrait of a woman with a confident and friendly expression, set against a soft-focus office background. The lighting is bright and natural, reflecting a modern, high-trust professional atmosphere. The color palette is clean, primarily featuring whites and soft grays to match a minimalist light-mode SaaS UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPdedjNrrvC5rskNU21emVHUD22MLj7oSHriwBrWH5nNwmMY9wUGD7ocwMm23ZPr-LEhX31cNH49OAihSoIrQRqE8MqeVTGgrzQsZ-fcvYV5xDcLcKDQ8U3kBwBPUp7oOQyit3BgVAJpLorUB8SS1Z4D85bsF28Tx3T3VndVdK7cZJ59D_jzcR8GsQUXZVMCGBp2YabNaBnp_OABVaRFtFzPWo3t2JxpUNgF9IjOCyCW4XuMry5X8aSojR2Iu1m3HFuQpCyj7Nuy28">
+    </div>
+    </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="max-w-[1200px] mx-auto px-layout-margin py-xxl animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <!-- Dashboard Header -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-lg mb-xxl">
+    <div>
+    <h1 class="font-headline-md text-headline-md text-on-surface mb-xs">My Support Tickets</h1>
+    <p class="font-body-default text-body-default text-text-secondary">Track your inquiries and technical issues</p>
+    </div>
+    <button class="bg-primary hover:bg-primary-container text-white px-xl py-md rounded-lg font-label-bold text-label-bold flex items-center gap-2 shadow-sm transition-all active:scale-[0.98]" onclick="window.location.href='create_ticket.html'">
+    <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                    Create New Ticket
+                </button>
+    </header>
+    <!-- Filters Section -->
+    <section class="bg-surface-white p-lg rounded-xl shadow-sm mb-xl flex flex-wrap items-center gap-md border border-border-default">
+    <div class="flex items-center gap-2 px-md py-1.5 border border-border-default rounded-lg bg-surface-container-lowest cursor-pointer hover:border-outline transition-colors">
+    <span class="material-symbols-outlined text-text-secondary text-[20px]" data-icon="filter_list">filter_list</span>
+    <span class="font-label-bold text-label-bold">Status: All</span>
+    <span class="material-symbols-outlined text-text-secondary text-[16px]" data-icon="expand_more">expand_more</span>
+    </div>
+    <div class="flex items-center gap-2 px-md py-1.5 border border-border-default rounded-lg bg-surface-container-lowest cursor-pointer hover:border-outline transition-colors">
+    <span class="font-label-bold text-label-bold">Priority: Any</span>
+    <span class="material-symbols-outlined text-text-secondary text-[16px]" data-icon="expand_more">expand_more</span>
+    </div>
+    <div class="flex items-center gap-2 px-md py-1.5 border border-border-default rounded-lg bg-surface-container-lowest cursor-pointer hover:border-outline transition-colors">
+    <span class="material-symbols-outlined text-text-secondary text-[20px]" data-icon="calendar_today">calendar_today</span>
+    <span class="font-label-bold text-label-bold">Date Range</span>
+    <span class="material-symbols-outlined text-text-secondary text-[16px]" data-icon="expand_more">expand_more</span>
+    </div>
+    <div class="ml-auto flex items-center gap-md">
+    <span class="font-body-sm text-body-sm text-text-secondary">Showing 4 tickets</span>
+    <button class="text-primary font-label-bold text-label-bold hover:underline">Clear all</button>
+    </div>
+    </section>
+    <!-- AI Insights Banner (Special Functional Layering) -->
+    <div class="mb-xl bg-ai-gold-subtle border-l-4 border-ai-gold p-lg rounded-r-xl flex items-start gap-md shadow-sm">
+    <span class="material-symbols-outlined text-ai-gold" data-icon="psychology">psychology</span>
+    <div>
+    <p class="font-label-bold text-label-bold text-on-tertiary-fixed-variant">AI Insight</p>
+    <p class="font-body-default text-body-default text-on-tertiary-fixed-variant">Ticket #TKT-8842 might be resolved faster by checking the <a class="underline font-bold" href="dashboard_user.html">Cloud Connectivity Guide</a> recently added to the Knowledge Base.</p>
+    </div>
+    </div>
+    <!-- Ticket Cards Grid -->
+    <div class="grid grid-cols-1 gap-md">
+    <!-- Ticket Card 1 -->
+    <div class="ticket-card bg-surface-white border border-border-default rounded-xl p-xl flex flex-col md:flex-row md:items-center justify-between gap-xl transition-all cursor-pointer" data-href="details.html">
+    <div class="flex items-start gap-lg flex-1">
+    <div class="w-2 h-2 rounded-full bg-error-red mt-2" title="High Priority"></div>
+    <div>
+    <div class="flex items-center gap-2 mb-1">
+    <span class="font-code-data text-code-data text-text-secondary">#TKT-9012</span>
+    <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-bold text-badge-cap">IN PROGRESS</span>
+    </div>
+    <h3 class="font-title-card text-title-card text-on-surface">Unable to access production VPN from regional office</h3>
+    <p class="font-body-sm text-body-sm text-text-secondary mt-1">Reported issues with authentication handshake timeout on primary node.</p>
+    </div>
+    </div>
+    <div class="flex items-center gap-xxl shrink-0">
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Assigned Agent</span>
+    <div class="flex items-center gap-2 mt-1">
+    <div class="h-6 w-6 rounded-full overflow-hidden">
+    <img alt="Agent profile" class="h-full w-full object-cover" data-alt="A professional headshot of a smiling male technical support engineer with short hair, wearing a casual polo shirt. The setting is a bright, modern corporate office with soft natural light. The aesthetic is professional and approachable, adhering to high-trust enterprise SaaS design standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnDiQqFPIsCKhM4BIliTj_C4V-7JXcX6TQpKufl06fPTo1b3X0SyJMYl-aS1xbWWUAE5hBq5az1RmGHwAzjA19eJ5zLDi3gxoM5UiPQxgYq64Cjv12QQqhHUNNfzgWAK_VgairzQcViHjTtPZ_op2vHcD1ZmFYfNrVzMgxLU5r1w1nPVArv8sWyN4NgZLQxdUZPyu6FrEE2Fc8aA5g2nEpzhdGaYvkKKpw_Gtxa67-vCFhBDf4tGme6kfE6i36__7v1pdGnIQ341FT">
+    </div>
+    <span class="font-label-bold text-label-bold">Marcus Chen</span>
+    </div>
+    </div>
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Last Updated</span>
+    <span class="font-label-bold text-label-bold mt-1">14 mins ago</span>
+    </div>
+    <span class="material-symbols-outlined text-text-secondary" data-icon="chevron_right">chevron_right</span>
+    </div>
+    </div>
+    <!-- Ticket Card 2 -->
+    <div class="ticket-card bg-surface-white border border-border-default rounded-xl p-xl flex flex-col md:flex-row md:items-center justify-between gap-xl transition-all cursor-pointer" data-href="details.html">
+    <div class="flex items-start gap-lg flex-1">
+    <div class="w-2 h-2 rounded-full bg-ai-gold mt-2" title="Medium Priority"></div>
+    <div>
+    <div class="flex items-center gap-2 mb-1">
+    <span class="font-code-data text-code-data text-text-secondary">#TKT-8842</span>
+    <span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-bold text-badge-cap">OPEN</span>
+    </div>
+    <h3 class="font-title-card text-title-card text-on-surface">Feature request: Bulk export of audit logs</h3>
+    <p class="font-body-sm text-body-sm text-text-secondary mt-1">Need ability to export logs in CSV format for quarterly security reviews.</p>
+    </div>
+    </div>
+    <div class="flex items-center gap-xxl shrink-0">
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Assigned Agent</span>
+    <div class="flex items-center gap-2 mt-1">
+    <div class="h-6 w-6 rounded-full bg-surface-container flex items-center justify-center">
+    <span class="material-symbols-outlined text-text-secondary text-[16px]" data-icon="person">person</span>
+    </div>
+    <span class="font-label-bold text-label-bold italic text-text-secondary">Awaiting Assignee</span>
+    </div>
+    </div>
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Last Updated</span>
+    <span class="font-label-bold text-label-bold mt-1">3 hours ago</span>
+    </div>
+    <span class="material-symbols-outlined text-text-secondary" data-icon="chevron_right">chevron_right</span>
+    </div>
+    </div>
+    <!-- Ticket Card 3 -->
+    <div class="ticket-card bg-surface-white border border-border-default rounded-xl p-xl flex flex-col md:flex-row md:items-center justify-between gap-xl transition-all cursor-pointer opacity-80" data-href="details.html">
+    <div class="flex items-start gap-lg flex-1">
+    <div class="w-2 h-2 rounded-full bg-outline-variant mt-2" title="Low Priority"></div>
+    <div>
+    <div class="flex items-center gap-2 mb-1">
+    <span class="font-code-data text-code-data text-text-secondary">#TKT-7651</span>
+    <span class="px-2 py-0.5 rounded-full bg-surface-dim text-on-surface-variant font-label-bold text-badge-cap">RESOLVED</span>
+    </div>
+    <h3 class="font-title-card text-title-card text-on-surface">Password reset link not arriving</h3>
+    <p class="font-body-sm text-body-sm text-text-secondary mt-1">The activation email was filtered into the junk folder by corporate firewall.</p>
+    </div>
+    </div>
+    <div class="flex items-center gap-xxl shrink-0">
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Assigned Agent</span>
+    <div class="flex items-center gap-2 mt-1">
+    <div class="h-6 w-6 rounded-full overflow-hidden">
+    <img alt="Agent profile" class="h-full w-full object-cover" data-alt="A professional headshot of a middle-aged male IT consultant with glasses and a friendly, knowledgeable expression. He is wearing a crisp business casual shirt. The background is a clean, minimal office environment with soft focus. The overall image has a light, modern aesthetic with high contrast and natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmorGoFnYUe9Cu2xS3-hDBZ43uS86J-WWUAVoqUICDNCBryOsIcWvpcF6FaEVb8KmCD67HgFPl2QeimWtCP_QVeJhQjSvsiIcwhm5rEfNSFauhPk4FgAQwhQZ8g4d_DyVDOTrlF23RcNf6rAQ06NI0JQE6WdzSj5-6XI75X9Pra_qkii30NZxUZJ_UkhFCryQjWwjGakJxuTHnDq_lCAT9T1Dm0zYdQ__V0W4wIH6pC-2rpXj4hwm6SSijMABi5C9bEW7pIZnJNZgn">
+    </div>
+    <span class="font-label-bold text-label-bold">Sarah Jenkins</span>
+    </div>
+    </div>
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Last Updated</span>
+    <span class="font-label-bold text-label-bold mt-1">2 days ago</span>
+    </div>
+    <span class="material-symbols-outlined text-text-secondary" data-icon="chevron_right">chevron_right</span>
+    </div>
+    </div>
+    <!-- Ticket Card 4 -->
+    <div class="ticket-card bg-surface-white border border-border-default rounded-xl p-xl flex flex-col md:flex-row md:items-center justify-between gap-xl transition-all cursor-pointer" data-href="details.html">
+    <div class="flex items-start gap-lg flex-1">
+    <div class="w-2 h-2 rounded-full bg-error mt-2" title="Urgent Priority"></div>
+    <div>
+    <div class="flex items-center gap-2 mb-1">
+    <span class="font-code-data text-code-data text-text-secondary">#TKT-9045</span>
+    <span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-bold text-badge-cap">CRITICAL</span>
+    </div>
+    <h3 class="font-title-card text-title-card text-on-surface">Database connection pool exhaustion on Dev-04</h3>
+    <p class="font-body-sm text-body-sm text-text-secondary mt-1">Entire development environment is down, blocking frontend team progress.</p>
+    </div>
+    </div>
+    <div class="flex items-center gap-xxl shrink-0">
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Assigned Agent</span>
+    <div class="flex items-center gap-2 mt-1">
+    <div class="h-6 w-6 rounded-full overflow-hidden">
+    <img alt="Agent profile" class="h-full w-full object-cover" data-alt="A portrait of an experienced female systems engineer looking focused and professional, dressed in a modern dark blazer. The lighting is crisp and cool-toned, creating a high-performance technical feel. The background is a blurred office with subtle technological elements like server lights. The aesthetic is professional, technical, and high-trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe7ZmP7mg4P488LUS1Tj-y_UcjVcHr8SkOjm1ijnavNU-MZ9q1vFU1auo0gwFEoHPx-eY4-800njxABx2CvWX2Beak4QsZY_GAus1ROCEvY-XKCFQoRvFlyjJgLlZSi3ZOrCC0TX1xzy6kl7X-JugI-ehN1iqzOSWUKZpZHEZlY-pYqI677Y5Z9tbMc-WL3cWwMgBvE-_qa-DI8vaR9M8QSh3tCXw7V4kv4penak8pFSvyI5PuCY6fC47Lo6goJiHTi6lodg8t7Ufi">
+    </div>
+    <span class="font-label-bold text-label-bold">Alex Rivera</span>
+    </div>
+    </div>
+    <div class="flex flex-col md:items-end">
+    <span class="font-body-sm text-body-sm text-text-tertiary uppercase tracking-wider">Last Updated</span>
+    <span class="font-label-bold text-label-bold mt-1">Just now</span>
+    </div>
+    <span class="material-symbols-outlined text-text-secondary" data-icon="chevron_right">chevron_right</span>
+    </div>
+    </div>
+    </div>
+    <!-- Empty State (Hidden by default, shown for illustration) -->
+    <div class="hidden flex-col items-center justify-center py-24 text-center" id="empty-state">
+    <div class="mb-lg p-xxl bg-surface-container rounded-full inline-flex">
+    <span class="material-symbols-outlined text-[64px] text-text-tertiary" data-icon="confirmation_number">confirmation_number</span>
+    </div>
+    <h2 class="font-headline-sm text-headline-sm text-on-surface mb-xs">No support tickets yet</h2>
+    <p class="font-body-default text-body-default text-text-secondary max-w-sm mb-xl">When you create an inquiry or report an issue, it will appear here for you to track its progress.</p>
+    <button class="border border-primary text-primary hover:bg-primary hover:text-white px-xl py-md rounded-lg font-label-bold text-label-bold transition-all">
+                    Learn how to get support
+                </button>
+    </div>
+    </main>
+    <!-- Bottom Action Sheet (Mobile only FAB) -->
+    <div class="fixed bottom-xl right-xl md:hidden">
+    <button class="h-14 w-14 bg-primary rounded-full flex items-center justify-center text-white shadow-xl active:scale-90 transition-transform" onclick="window.location.href='create_ticket.html'">
+    <span class="material-symbols-outlined" data-icon="add">add</span>
+    </button>
+    </div>
+    <!-- Micro-interaction Script -->
+    <script src="shared-sidebar.js"></script>
+    <script>
+            document.querySelectorAll('.ticket-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    card.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        window.location.href = card.dataset.href || 'details.html';
+                    }, 100);
+                });
+            });
+    
+            // Search highlight simulation
+            const searchInput = document.querySelector('input[type="text"]');
+            searchInput.addEventListener('input', (e) => {
+                const val = e.target.value.toLowerCase();
+                document.querySelectorAll('.ticket-card').forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(val) ? 'flex' : 'none';
+                });
+            });
+        </script>
+    </body></html>
